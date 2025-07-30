@@ -1,0 +1,48 @@
+/* Login Page Styles */
+.text-orange {
+    color: #f48223;
+}
+
+.card {
+    border-radius: 8px;
+    border: none;
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #f48223;
+    box-shadow: 0 0 0 0.25rem rgba(244, 130, 35, 0.25);
+}
+
+.btn-orange {
+    background-color: #f48223;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.btn-orange:hover {
+    background-color: #e67416;
+    color: white;
+}
+
+.input-group-text {
+    background-color: transparent;
+    cursor: pointer;
+    border-left: none;
+}
+
+#togglePassword {
+    color: #6c757d;
+}
+
+#togglePassword:hover {
+    color: #f48223;
+}
