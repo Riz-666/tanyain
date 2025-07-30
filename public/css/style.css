@@ -40,7 +40,6 @@
 
 .hero-section .text-wrapper {
     position: relative;
-    width: 262px;
     margin-left: -151.00px;
     margin-right: -151.00px;
     font-family: "Inter-Regular", Helvetica;
@@ -303,6 +302,69 @@
     }
 }
 
+/* Navbar sebagai flex container */
+.navbar {
+  padding: 1rem;
+}
+
+/* Buat nav-item menggunakan Flexbox */
+.nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Spacer otomatis agar item terakhir ke kanan */
+.ms-auto {
+  margin-left: auto !important;
+}
+
+/* Avatar bulat */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Avatar di dropdown versi lebih besar (opsional) */
+.dropdown-avatar {
+  width: 60px;
+  height: 60px;
+}
+
+/* Spasi antara nama pengguna dan avatar */
+.user-name {
+  font-weight: 500;
+}
+
+/* Dropdown-user container custom */
+.user-dropdown .dropdown-menu {
+  min-width: 200px;
+  padding: 0.5rem 1rem;
+}
+
+/* Styling email tampil di dropdown */
+.email {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Gap di antara nav link dan dropdown */
+.nav-item .nav-link,
+.nav-item .button-repositori {
+  padding: 0.5rem 1rem;
+}
+
+/* Tambahan responsif minimal */
+@media (max-width: 991px) {
+  .user-dropdown {
+    display: none;
+  }
+}
+
+
+
 /* NAVBAR DONE */
 
 /* HEADER SECTION */
@@ -321,8 +383,8 @@
 
 .header .text-wrapper {
     position: relative;
-    width: 260px;
     height: 43px;
+    text-align: center;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
     color: #ffffff;
@@ -402,7 +464,6 @@
     display: flex;
     flex-direction: column;
     width: 1259px;
-    height: 1100px;
     align-items: flex-start;
     gap: 10px;
     position: relative;
