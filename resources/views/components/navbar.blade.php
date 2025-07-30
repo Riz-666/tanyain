@@ -8,6 +8,7 @@
           <li><a href="#" class="nav-link">Repositori</a></li>
           <li><a href="#" class="nav-link">Article</a></li>
           <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+          <li><a href="#" class="nav-link">Login</a></li>
         </ul>
       </nav>
       <form class="search" role="search">
