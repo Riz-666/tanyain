@@ -4,11 +4,9 @@
             <h1 class="text-wrapper-3">Logo</h1>
         </div>
         <ul class="nav-item">
-          <li><a href="#" class="button-repositori">Beranda</a></li>
-            <li><a href="/" class="button-repositori">Beranda</a></li>
+          <li><a href="/" class="button-repositori">Beranda</a></li>
             <li><a href="{{ route('repository') }}" class="nav-link">Repositori</a></li>
             <li><a href="{{ route('article') }}" class="nav-link">Article</a></li>
-          <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
 
             @if (Auth::user() && Auth::user()->role === 'user')
                 <li class="nav-link dropdown">
@@ -48,7 +46,7 @@
             @endif
         </ul>
     </nav>
-    <form class="search" role="search">
+    <form class="search mb-4" role="search">
         <div class="search-field">
             <label for="search-input" class="visually-hidden">Search</label>
             <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
