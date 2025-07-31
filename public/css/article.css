@@ -1,0 +1,106 @@
+/* Article Page Styles */
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.article-count {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.show-all-btn {
+    background-color: #f48223;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.article-card {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.article-meta {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.article-date {
+    color: #6c757d;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.article-author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.author-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-name {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.author-stats {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.view-count {
+    display: inline-flex;
+    align-items: center;
+    color: #6c757d;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.view-count i {
+    margin-right: 5px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #f48223;
+    border-color: #f48223;
+}
+
+.pagination .page-link {
+    color: #f48223;
+}
+
+.filter-button {
+    border-color: #dee2e6;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.filter-button i {
+    margin-right: 5px;
+}

@@ -4,9 +4,11 @@
             <h1 class="text-wrapper-3">Logo</h1>
         </div>
         <ul class="nav-item">
+          <li><a href="#" class="button-repositori">Beranda</a></li>
             <li><a href="/" class="button-repositori">Beranda</a></li>
-            <li><a href="#" class="nav-link">Repositori</a></li>
-            <li><a href="#" class="nav-link">Article</a></li>
+            <li><a href="{{ route('repository') }}" class="nav-link">Repositori</a></li>
+            <li><a href="{{ route('article') }}" class="nav-link">Article</a></li>
+          <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
 
             @if (Auth::user() && Auth::user()->role === 'user')
                 <li class="nav-link dropdown">
@@ -32,8 +34,8 @@
                         <li>
                             <hr>
                         </li>
-                        <li><a class="dropdown-item edit-title" href="#"><i class="fa fa-pen-to-square"></i> Edit
-                                Profile</a></li>
+                        <li><a class="dropdown-item edit-title" href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+
                         <form action="{{ Route('logout') }}" method="post">
                             @csrf
                         <li><button class="dropdown-item logout-title"><i class="fa fa-power-off"></i>

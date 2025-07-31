@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleguide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create_article.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/detail_article.css') }}">
 </head>
 
 <body>
