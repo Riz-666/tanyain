@@ -1,0 +1,57 @@
+.editor-toolbar {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-bottom: none;
+    padding: 5px 10px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.editor-toolbar button {
+    margin-right: 5px;
+    color: #6c757d;
+    background: transparent;
+    border: none;
+}
+
+.editor-toolbar button:hover {
+    color: #212529;
+    background-color: #e9ecef;
+}
+
+.editor-area {
+    border-radius: 0 0 4px 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.upload-area {
+    border: 2px dashed #ced4da !important;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: #adb5bd !important;
+    background-color: #e9ecef;
+}
+
+.btn-orange {
+    background-color: #FF6B00;
+    border-color: #FF6B00;
+}
+
+.btn-orange:hover {
+    background-color: #e05e00;
+    border-color: #e05e00;
+}
+
+.text-orange {
+    color: #FF6B00 !important;
+}
+
+.text-orange:hover {
+    color: #e05e00 !important;
+}
