@@ -19,7 +19,7 @@
     box-shadow: 0 0 0 0.25rem rgba(244, 130, 35, 0.25);
 }
 
-.btn-orange {
+.button .btn-login {
     background-color: #f48223;
     color: white;
     border: none;
@@ -28,8 +28,8 @@
     font-weight: 500;
 }
 
-.btn-orange:hover {
-    background-color: #e67416;
+.button .btn-login:hover {
+    background-color: #844512;
     color: white;
 }
 

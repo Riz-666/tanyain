@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('username',30)->unique();
             $table->string('email')->unique();
             $table->enum('role',['super_admin', 'user']);
+            $table->string('foto')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

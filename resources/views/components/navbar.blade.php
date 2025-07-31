@@ -1,19 +1,14 @@
 <header class="hero-section">
-      <nav class="navbar">
+    <nav class="navbar ">
         <div class="logo">
-          <h1 class="text-wrapper-3">Logo</h1>
+            <h1 class="text-wrapper-3">Logo</h1>
         </div>
         <ul class="nav-item">
-<<<<<<< Updated upstream
           <li><a href="#" class="button-repositori">Beranda</a></li>
-          <li><a href="#" class="nav-link">Repositori</a></li>
-          <li><a href="#" class="nav-link">Article</a></li>
-          <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-          <li><a href="#" class="nav-link">Login</a></li>
-=======
             <li><a href="/" class="button-repositori">Beranda</a></li>
             <li><a href="{{ route('repository') }}" class="nav-link">Repositori</a></li>
             <li><a href="{{ route('article') }}" class="nav-link">Article</a></li>
+          <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
 
             @if (Auth::user() && Auth::user()->role === 'user')
                 <li class="nav-link dropdown">
@@ -40,8 +35,7 @@
                             <hr>
                         </li>
                         <li><a class="dropdown-item edit-title" href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
-                        <li><a class="dropdown-item edit-title" href="#"><i class="fa fa-pen-to-square"></i> Edit
-                                Profile</a></li>
+
                         <form action="{{ Route('logout') }}" method="post">
                             @csrf
                         <li><button class="dropdown-item logout-title"><i class="fa fa-power-off"></i>
@@ -52,18 +46,17 @@
             @else
                 <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
             @endif
->>>>>>> Stashed changes
         </ul>
-      </nav>
-      <form class="search" role="search">
+    </nav>
+    <form class="search" role="search">
         <div class="search-field">
-          <label for="search-input" class="visually-hidden">Search</label>
-          <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
+            <label for="search-input" class="visually-hidden">Search</label>
+            <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
         </div>
         <button type="submit" class="search-field-wrapper" aria-label="Submit search">
-          <div class="icon-magnifyingglass-wrapper">
-            <img class="icon-magnifyingglass" src="img/magnifyingglass.svg" alt="" />
-          </div>
+            <div class="icon-magnifyingglass-wrapper">
+                <img class="icon-magnifyingglass" src="img/magnifyingglass.svg" alt="" />
+            </div>
         </button>
-      </form>
-    </header>
+    </form>
+</header>

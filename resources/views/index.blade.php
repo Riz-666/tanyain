@@ -1,11 +1,19 @@
 @extends('components.app')
 @section('body')
     <header class="header">
-        <h1 class="text-wrapper">TanyaIn</h1>
-        <p class="div">PLATFORM BLOG DAN ARTIKEL AKADEMIK BERBASIS PENCARIAN</p>
-        <a href="#" class="button btn btn-light" role="button">
-            <span class="text-wrapper-2">JELAJAHI ARTIKEL</span>
-        </a>
+        @if (Auth::check() && Auth::user()->role === 'user')
+            <h1 class="text-wrapper">Wellcome, {{ Auth::user()->nama }}</h1>
+            <p class="div">Tuntaskan Tugasmu Dengan Mudah di Platform TanyaIn</p>
+            <a href="#" class="button btn btn-light" role="button">
+                <span class="text-wrapper-2">JELAJAHI ARTIKEL</span>
+            </a>
+        @else
+            <h1 class="text-wrapper">TanyaIn</h1>
+            <p class="div">PLATFORM BLOG DAN ARTIKEL AKADEMIK BERBASIS PENCARIAN</p>
+            <a href="#" class="button btn btn-light" role="button">
+                <span class="text-wrapper-2">JELAJAHI ARTIKEL</span>
+            </a>
+        @endif
     </header>
     <main class="frame">
         <section class="listbox-choose-blog">
