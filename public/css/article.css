@@ -12,12 +12,16 @@
     font-size: 14px;
     margin-top: -10px;
 }
-
-.show-all-btn {
+.show-all-btn{
     background-color: #f48223;
     color: white;
-    padding: 5px 15px;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+.show-all-btn:hover{
+    background-color: #f48223;
+    color: white;
+    border-radius: 7px;
     font-size: 12px;
 }
 

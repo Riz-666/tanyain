@@ -1,66 +1,58 @@
 @extends('components.app')
 
 @section('body')
-<div class="container mt-4">
+    <div class="container mt-4">
 
-    <h2 class="mb-4">Tambah Article</h2>
-    <form action="#" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mb-4">
-                    <label for="title" class="form-label">Title Article</label>
-                    <p class="text-muted small">Silahkan isi title artikel yang sesuai dengan artikel</p>
-                    <div class="editor-toolbar">
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-bold"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-italic"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-underline"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-list-ol"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-list-ul"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-link"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-image"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-code"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-quote"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-justify"></i></button>
+        <h1 class="mb-4">Tambah Article</h1>
+        <form action="{{ Route('add.artikel') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-4">
+                        <label for="title" class="form-label">Title Article</label>
+                        <p class="text-muted small">Silahkan isi title artikel yang sesuai dengan artikel</p>
+                        <input type="text" name="judul" id="" class="form-control">
                     </div>
-                    <textarea id="title" class="form-control editor-area" rows="5"></textarea>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mb-4">
-                    <label for="content" class="form-label">Isi Article</label>
-                    <p class="text-muted small">Tuliskan artikel anda</p>
-                    <div class="editor-toolbar">
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-bold"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-italic"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-type-underline"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-list-ol"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-list-ul"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-link"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-image"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-code"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-quote"></i></button>
-                        <button type="button" class="btn btn-sm"><i class="bi bi-justify"></i></button>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-4">
+                        <label for="content" class="form-label">Isi Article</label>
+                        <p class="text-muted small">Tuliskan artikel anda</p>
+                        <textarea id="editor2" class="form-control editor-area" name="isi" rows="8"></textarea>
                     </div>
-                    <textarea id="content" class="form-control editor-area" rows="8"></textarea>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="mb-4">
-                            <label class="form-label">Upload File Article (Optional)</label>
-                            <p class="text-muted small">Jika artikel yang upload adalah yang pernah tersimpan, artikel akan diupload disini</p>
-                            <input type="file" class="form-control" id="fileInput" multiple>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-4">
+                                <label class="form-label">Upload File Article (Optional)</label>
+                                <p class="text-muted small">Jika artikel yang upload adalah yang sudah tersimpan atau dalam
+                                    bentuk file, artikel bisa diupload disini</p>
+                                <input type="file" name="file" class="form-control" id="fileInput" multiple>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-4">
+                                <label>Status Artikel:</label><br>
+
+                                <input type="radio" name="status" value="publik" id="publik"
+                                    {{ old('status') == 'publik' ? 'checked' : '' }}>
+                                <label for="publik">Publik</label><br>
+
+                                <input type="radio" name="status" value="private" id="private"
+                                    {{ old('status') == 'private' ? 'checked' : '' }}>
+                                <label for="private">Private</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
-</div>
-</div>
+        </form>
+    </div>
+    </div>
+    </div>
 @endsection
