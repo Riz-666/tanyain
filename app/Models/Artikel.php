@@ -11,21 +11,21 @@ class Artikel extends Model
     protected $table = 'artikel';
     protected $fillable = [
         'user_id',
+        'repositori_id',
         'judul',
         'slug',
         'isi',
         'status',
-        'views'
-    ];
+        'views'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
+ 
     public function repositori()
     {
-        return $this->hasMany(Repositori::class);
+        return $this->belongsTo(Repositori::class);
     }
 
     public function viewArtikel()

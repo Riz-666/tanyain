@@ -1,10 +1,16 @@
 <?php
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ArticleController;
+
+use App\Http\Controllers\FileRepoController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RepositoryController;
+use App\Http\Controllers\SearchController;
+use Illuminate\Support\Facades\Route;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,15 +39,23 @@ use App\Http\Controllers\RepositoryController;
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     //Route buat artikel
-    Route::get('/article/create', [ArticleController::class, 'create_article'])->name('article.create');
-    Route::post('/article/add', [ArticleController::class, 'add_artikel'])->name('add.artikel');
 
+    Route::get('/article/create', [ArticleController::class, 'create_article'])->middleware('role:user')->name('article.create');
+    Route::post('/article/add', [ArticleController::class, 'add_artikel'])->middleware('role:user')->name('add.artikel');
     Route::get('/article', [ArticleController::class, 'article'])->name('article');
     Route::get('/article/{id}', [ArticleController::class, 'article_detail'])->name('article.detail');
 
+    //Route buat repo
     Route::get('/repository', [RepositoryController::class, 'index'])->name('repository');
+    Route::get('/repositori/create', [RepositoryController::class, 'create_repo'])->middleware('role:user')->name('repo.create');
+    Route::post('/repositori/add', [RepositoryController::class,  'add_repo'])->middleware('role:user')->name('add.repo');
+    Route::get('/repositori/detail/{id}', [RepositoryController::class, 'repo_detail'])->name('repo.detail');
+    //aksi
+    Route::get('/file/pdf/{id}', [FileRepoController::class, 'showPdf'])->name('file.pdf');
+    Route::get('/file/{id}', [FileRepoController::class, 'showFile'])->name('file.show');
 
 
-    Route::get('/profile', function () {
-        return view('profile');
-    })->name('profile');
+    //search
+    Route::get('/search', [SearchController::class, 'index'])->name('search.all');
+
+    Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');

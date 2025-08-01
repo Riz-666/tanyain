@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('repositori_id')->nullable();
             $table->string('judul');
             $table->string('slug')->unique();
             $table->text('isi');

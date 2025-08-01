@@ -34,7 +34,7 @@
                         <li>
                             <hr>
                         </li>
-                        <li><a class="dropdown-item edit-title" href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a class="dropdown-item edit-title" href="{{ route('profile', Auth::user()->id) }}"><i class="fa fa-user"></i> Profile</a></li>
 
                         <form action="{{ Route('logout') }}" method="post">
                             @csrf
@@ -44,13 +44,13 @@
                     </ul>
                 </li>
             @else
-                <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link {{ request()->is('login') ? 'active' : '' }}">Login</a></li>
             @endif
             <li>
-                <form class="search" role="search">
+                <form class="search" role="search" action="{{ route('search.all') }}" method="GET">
                     <div class="search-field">
                         <label for="search-input" class="visually-hidden">Search</label>
-                        <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
+                        <input type="search" id="search-input" class="query-wrapper" name="search" placeholder="Search" value="{{ request('search') }}"/>
                     </div>
                     <button type="submit" class="search-field-wrapper" aria-label="Submit search">
                         <div class="icon-magnifyingglass-wrapper">
