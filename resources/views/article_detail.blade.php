@@ -16,30 +16,25 @@
                             <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar"
                                 alt="Profile">
                         </div>
-                        <div class="author-detail">
-                            <p class="author-name">{{ $artikel->user->nama }}</p>
-                            <p class="author-stats">15.3k</p>
+                        <div class="col-md-9">
+                            <div class="author-detail">
+                                <p class="author-name">{{ $artikel->user->nama }}</p>
+                                <p class="author-stats">15.3k</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="author-detail">
+                                <a href="{{ Route('repo.detail',$artikel->repositori->id) }}" class="btn btn-primary" style="width: 100%">Lihat Repositori Artikel</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Article Content -->
                 <div class="article-content mt-4">
                     <p>{!! $artikel->isi !!}</p>
-
-                    <!-- PDF Viewer -->
-
-                    @if ($artikel->repositori->isNotEmpty())
-                        <embed src="{{ asset('storage/repositori/' . $artikel->repositori->first()->nama_file) }}"
-                            type="application/pdf" width="100%" height="1000px" />
-                    @else
-                        <p>Tidak ada file repositori untuk artikel ini.</p>
-                    @endif
                 </div>
+                <hr>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
 @endsection

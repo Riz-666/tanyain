@@ -1,79 +1,68 @@
 @extends('components.app')
 
 @section('body')
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="article-header">
-                <h2 class="mb-0">Article</h2>
-                @if (Auth::check() && auth()->user()->role == 'user')
-                <div class="show-all-btn">
-                    <a href="{{ route('article.create') }}" class="btn btn-orange text-white" >Tambah Article</a>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-header">
+                    <h2 class="mb-0">List Article</h2>
+                    @if (Auth::check() && auth()->user()->role == 'user')
+                        <div class="show-all-btn">
+                            <a href="{{ route('article.create') }}" class="btn btn-orange text-white">Tambah Article</a>
+                        </div>
+                    @endif
                 </div>
-                @endif
+                <p class="article-count">{{ $totalArtikel }} Articles</p>
             </div>
-            <p class="article-count">{{ $totalArtikel }} articles</p>
         </div>
-    </div>
 
-    <div class="row mb-3">
-        <div class="col-12 text-end">
-            <button class="filter-button btn btn-sm">
-                <i class="bi bi-filter"></i> Filter
-            </button>
-        </div>
-    </div>
-
-    <!-- Article List -->
-    <div class="row">
-        <div class="col-12">
-        @foreach ($artikel as $art)
-            <a href="{{ route('article.detail', $art->id) }}" class="text-decoration-none text-dark">
-                <div class="article-card card mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="view-count"><i class="bi bi-eye"></i> {{ $art->views }}</span>
-                                    <h5 class="card-title mb-0">{{ $art->judul }}</h5>
-                                </div>
-                                <p class="card-text text-muted small">
-                                    {!! $art->isi !!}
-                                </p>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="article-meta">
-                                    <p class="article-date">{{ $art->created_at }}</p>
-                                    <div class="article-author">
-                                        <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar" alt="Profile">
-                                        <div class="author-info">
-                                            <p class="author-name">{{ $art->user->nama }}</p>
-                                            <p class="author-stats">15.3k</p>
+        <!-- Article List -->
+        <div class="row">
+            <div class="col-12">
+                @foreach ($artikel as $art)
+                    <a href="{{ route('article.detail', $art->id) }}" class="text-decoration-none text-dark">
+                        <div class="article-card card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="view-count"><i class="bi bi-eye"></i> {{ $art->views }}</span>
+                                            <h5 class="card-title mb-0">{{ $art->judul }}</h5>
+                                        </div>
+                                        <p class="card-text text-muted small">
+                                            {!! $art->isi !!}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="article-meta">
+                                            <p class="article-date">{{ $art->created_at }}</p>
+                                            <div class="article-author">
+                                                <img src="{{ asset('storage/user-img/default-user.jpg') }}"
+                                                    class="author-avatar" alt="Profile">
+                                                <div class="author-info">
+                                                    <p class="author-name">{{ $art->user->nama }}</p>
+                                                    <span
+                                                        class="badge bg-secondary text-white text-wrapper-4 ">{{ $art->status }}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-            @endforeach
+                    </a>
+                @endforeach
+            </div>
         </div>
-    </div>
 
-    <!-- Pagination if needed -->
-    <div class="row mt-4">
-        <div class="col-12">
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <!-- Pagination if needed -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {{ $artikel->links('pagination::bootstrap-5') }}
+            </ul>
+        </nav>
     </div>
-</div>
 @endsection
+
+
+

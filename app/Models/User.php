@@ -46,17 +46,22 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function artikel(): HasMany
+    public function artikel()
     {
         return $this->hasMany(Artikel::class);
     }
 
-    public function viewArtikel(): HasMany
+    public function repositori()
+    {
+        return $this->hasMany(Repositori::class);
+    }
+
+    public function viewArtikel() 
     {
         return $this->hasMany(ViewArtikel::class);
     }
 
-    public function saran(): HasMany
+    public function saran()
     {
         return $this->hasMany(Saran::class);
     }

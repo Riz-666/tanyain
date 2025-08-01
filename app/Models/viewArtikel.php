@@ -15,12 +15,12 @@ class ViewArtikel extends Model
         'waktu'
     ];
 
-    public function artikel(): BelongsTo
+    public function artikel()
     {
         return $this->belongsTo(Artikel::class);
     }
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

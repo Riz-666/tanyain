@@ -5,65 +5,62 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Repositori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
     public function article()
     {
-        $artikel = Artikel::with('user','repositori','viewArtikel')->get();
+        if(Auth::check()){
+            $artikel = Artikel::latest()->paginate(5);
+        }else{
+            $artikel = Artikel::with('user','repositori', 'viewArtikel')->where('status', 'publik')->latest()->latest()->paginate(5);
+        }
         $totalArtikel = Artikel::count();
-        return view('article',[
+        return view('article', [
             'artikel' => $artikel,
-            'totalArtikel' => $totalArtikel
+            'totalArtikel' => $totalArtikel,
         ]);
     }
 
-    public function article_detail(String $id)
+    public function article_detail(string $id)
     {
-        $artikel = Artikel::with('user','repositori','viewArtikel')->findOrFail($id);
+        $artikel = Artikel::with('user', 'viewArtikel', 'repositori')->findOrFail($id);
         $repo = Repositori::with('artikel')->first();
-        return view('article_detail',[
+        return view('article_detail', [
             'artikel' => $artikel,
-            'repo' => $repo
         ]);
     }
 
     public function create_article()
     {
-        return view('create_article');
+        $repositori = Repositori::all();
+        return view('create_article', [
+            'repositori' => $repositori,
+        ]);
     }
     public function add_artikel(Request $request)
     {
         $validatedData = $request->validate([
+            'repositori_id' => 'exists:repositori,id',
             'judul' => 'required',
             'isi' => 'required',
-            'file' => 'mimes:pdf,doc,docx,zip,xlxs|max:1048576',
-            'status' => 'required|in:publik,private',
+            'file' => 'mimes:pdf,doc,docx,zip,xlxs,jpg,jpeg,png,gif|max:1048576',
         ]);
+
+        $repo = Repositori::find($validatedData['repositori_id']);
+        $status = $repo ? $repo->status : 'publik';
 
         $artikel = Artikel::create([
             'user_id' => auth()->id(),
+            'repositori_id' => $validatedData['repositori_id'],
             'judul' => $validatedData['judul'],
             'slug' => Str::slug($validatedData['judul']),
             'isi' => $validatedData['isi'],
-            'status' => $validatedData['status'],
+            'status' => $status,
             'views' => 0,
         ]);
-
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $nama_file = $file->getClientOriginalName();
-            $tipeFile = $file->getClientOriginalExtension();
-
-            $path = $file->storeAs('public/repositori', $nama_file);
-
-            Repositori::create([
-                'artikel_id' => $artikel->id,
-                'nama_file' => $nama_file,
-                'tipe_file' => $tipeFile,
-            ]);
-        }
 
         return redirect()->route('article')->with('success', 'Artikel berhasil ditambahkan');
     }

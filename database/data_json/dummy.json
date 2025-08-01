@@ -1,0 +1,38 @@
+{
+  "artikel": [
+    { "id": 1, "user_id": 2, "judul": "Dampak Teknologi di Dunia Pendidikan", "slug": "dampak-teknologi-di-dunia-pendidikan", "isi": "<p>Isi artikel 1</p>", "created_at": "2025-07-25T10:00:00", "views": 0, "repositori_id": 1 },
+    { "id": 2, "user_id": 2, "judul": "Penerapan AI dalam Keseharian", "slug": "penerapan-ai-dalam-keseharian", "isi": "<p>Isi artikel 2</p>", "created_at": "2025-07-26T09:20:00", "views": 0, "repositori_id": 2 },
+    { "id": 3, "user_id": 2, "judul": "Analisis Sosial Media", "slug": "analisis-sosial-media", "isi": "<p>Isi artikel 3</p>", "created_at": "2025-07-27T13:00:00", "views": 0, "repositori_id": 3 },
+    { "id": 4, "user_id": 2, "judul": "Perkembangan E-Government", "slug": "perkembangan-e-government", "isi": "<p>Isi artikel 4</p>", "created_at": "2025-07-27T14:30:00", "views": 0, "repositori_id": 4 },
+    { "id": 5, "user_id": 2, "judul": "Kecerdasan Buatan dan Etika", "slug": "kecerdasan-buatan-dan-etika", "isi": "<p>Isi artikel 5</p>", "created_at": "2025-07-28T10:45:00", "views": 0, "repositori_id": 5 },
+    { "id": 6, "user_id": 2, "judul": "Sistem Informasi Akademik", "slug": "sistem-informasi-akademik", "isi": "<p>Isi artikel 6</p>", "created_at": "2025-07-28T12:00:00", "views": 0, "repositori_id": 6 },
+    { "id": 7, "user_id": 2, "judul": "Cloud Computing dan Data", "slug": "cloud-computing-dan-data", "isi": "<p>Isi artikel 7</p>", "created_at": "2025-07-29T08:10:00", "views": 0, "repositori_id": 7 },
+    { "id": 8, "user_id": 2, "judul": "Perbandingan Framework Web", "slug": "perbandingan-framework-web", "isi": "<p>Isi artikel 8</p>", "created_at": "2025-07-29T10:25:00", "views": 0, "repositori_id": 8 },
+    { "id": 9, "user_id": 2, "judul": "Rekayasa Perangkat Lunak", "slug": "rekayasa-perangkat-lunak", "isi": "<p>Isi artikel 9</p>", "created_at": "2025-07-30T09:30:00", "views": 0, "repositori_id": 9 },
+    { "id": 10, "user_id": 2, "judul": "Manajemen Proyek IT", "slug": "manajemen-proyek-it", "isi": "<p>Isi artikel 10</p>", "created_at": "2025-07-30T11:15:00", "views": 0, "repositori_id": 10 }
+  ],
+  "repositori": [
+    { "id": 1, "user_id": 2, "judul_repo": "Skripsi Sistem Akademik", "deskripsi": "<p>Deskripsi repo 1</p>", "status": "publik", "created_at": "2025-07-20T10:00:00" },
+    { "id": 2, "user_id": 2, "judul_repo": "Analisis Sentimen Twitter", "deskripsi": "<p>Deskripsi repo 2</p>", "status": "private", "created_at": "2025-07-21T09:30:00" },
+    { "id": 3, "user_id": 2, "judul_repo": "Penerapan IoT", "deskripsi": "<p>Deskripsi repo 3</p>", "status": "publik", "created_at": "2025-07-22T08:15:00" },
+    { "id": 4, "user_id": 2, "judul_repo": "Aplikasi Mobile Perpustakaan", "deskripsi": "<p>Deskripsi repo 4</p>", "status": "publik", "created_at": "2025-07-22T10:45:00" },
+    { "id": 5, "user_id": 2, "judul_repo": "Website Smart City", "deskripsi": "<p>Deskripsi repo 5</p>", "status": "private", "created_at": "2025-07-23T13:00:00" },
+    { "id": 6, "user_id": 2, "judul_repo": "Visualisasi Data Kesehatan", "deskripsi": "<p>Deskripsi repo 6</p>", "status": "publik", "created_at": "2025-07-23T14:20:00" },
+    { "id": 7, "user_id": 2, "judul_repo": "Manajemen Inventori", "deskripsi": "<p>Deskripsi repo 7</p>", "status": "private", "created_at": "2025-07-24T15:00:00" },
+    { "id": 8, "user_id": 2, "judul_repo": "E-Voting Mahasiswa", "deskripsi": "<p>Deskripsi repo 8</p>", "status": "publik", "created_at": "2025-07-24T16:10:00" },
+    { "id": 9, "user_id": 2, "judul_repo": "Dashboard UKM", "deskripsi": "<p>Deskripsi repo 9</p>", "status": "publik", "created_at": "2025-07-25T10:25:00" },
+    { "id": 10, "user_id": 2, "judul_repo": "Sistem Absensi QR", "deskripsi": "<p>Deskripsi repo 10</p>", "status": "publik", "created_at": "2025-07-25T11:00:00" }
+  ],
+  "file_repo": [
+    { "id": 1, "repositori_id": 1, "nama_file": "skripsi_full.pdf", "path": "repositori/skripsi_full.pdf" },
+    { "id": 2, "repositori_id": 2, "nama_file": "analisis_sentimen.pdf", "path": "repositori/analisis_sentimen.pdf" },
+    { "id": 3, "repositori_id": 3, "nama_file": "iot_proposal.pdf", "path": "repositori/iot_proposal.pdf" },
+    { "id": 4, "repositori_id": 4, "nama_file": "mobile_lib.pdf", "path": "repositori/mobile_lib.pdf" },
+    { "id": 5, "repositori_id": 5, "nama_file": "smartcity.pdf", "path": "repositori/smartcity.pdf" },
+    { "id": 6, "repositori_id": 6, "nama_file": "data_kesehatan.xlsx", "path": "repositori/data_kesehatan.xlsx" },
+    { "id": 7, "repositori_id": 7, "nama_file": "inventori.docx", "path": "repositori/inventori.docx" },
+    { "id": 8, "repositori_id": 8, "nama_file": "e-voting.pdf", "path": "repositori/e-voting.pdf" },
+    { "id": 9, "repositori_id": 9, "nama_file": "dashboard_ukm.pptx", "path": "repositori/dashboard_ukm.pptx" },
+    { "id": 10, "repositori_id": 10, "nama_file": "absensi_qr.apk", "path": "repositori/absensi_qr.apk" }
+  ]
+}
