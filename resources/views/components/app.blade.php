@@ -77,7 +77,11 @@
             resize_enabled: false
         });
     </script>
-
+<script>
+    function toggleNavbar() {
+        document.getElementById('navLinks').classList.toggle('show');
+    }
+</script>
 </body>
 
 </html>

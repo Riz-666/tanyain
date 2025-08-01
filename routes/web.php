@@ -17,33 +17,31 @@ use App\Http\Controllers\RepositoryController;
 |
 */
 
-Route::middleware(['guest'])->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     //login & Auth Login
     Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login/auth', [LoginController::class, 'auth'])->name('auth');
 
+
+
     //REDIRECT
     Route::get('/redirect', function () {
         return view('redirect');
     });
-});
-
-Route::middleware(['auth', 'role:user'])->group(function () {
 
     Route::get('/dashboard/user', [IndexController::class, 'index'])->name('dashboard.user');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-    Route::get('/repository', [RepositoryController::class, 'index'])->name('repository');
-
     //Route buat artikel
-    Route::get('/article', [ArticleController::class, 'article'])->name('article');
     Route::get('/article/create', [ArticleController::class, 'create_article'])->name('article.create');
     Route::post('/article/add', [ArticleController::class, 'add_artikel'])->name('add.artikel');
 
+    Route::get('/article', [ArticleController::class, 'article'])->name('article');
     Route::get('/article/{id}', [ArticleController::class, 'article_detail'])->name('article.detail');
+
+    Route::get('/repository', [RepositoryController::class, 'index'])->name('repository');
+
 
     Route::get('/profile', function () {
         return view('profile');
     })->name('profile');
-});

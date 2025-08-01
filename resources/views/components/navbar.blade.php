@@ -1,12 +1,14 @@
-<header class="hero-section">
-    <nav class="navbar ">
-        <div class="logo">
-            <h1 class="text-wrapper-3">Logo</h1>
-        </div>
-        <ul class="nav-item">
-          <li><a href="/" class="button-repositori">Beranda</a></li>
-            <li><a href="{{ route('repository') }}" class="nav-link">Repositori</a></li>
-            <li><a href="{{ route('article') }}" class="nav-link">Article</a></li>
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">TanyaIn</div>
+
+        <button class="hamburger" onclick="toggleNavbar()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Beranda</a></li>
+            <li><a href="{{ route('repository') }}"
+                    class="{{ request()->is('repository') ? 'active' : '' }}">Repositori</a></li>
+            <li><a href="{{ route('article') }}" class="{{ request()->is('article') ? 'active' : '' }}">Artikel</a></li>
 
             @if (Auth::user() && Auth::user()->role === 'user')
                 <li class="nav-link dropdown">
@@ -44,17 +46,23 @@
             @else
                 <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
             @endif
+            <li>
+                <form class="search" role="search">
+                    <div class="search-field">
+                        <label for="search-input" class="visually-hidden">Search</label>
+                        <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
+                    </div>
+                    <button type="submit" class="search-field-wrapper" aria-label="Submit search">
+                        <div class="icon-magnifyingglass-wrapper">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </button>
+                </form>
+            </li>
         </ul>
-    </nav>
-    <form class="search mb-4" role="search">
-        <div class="search-field">
-            <label for="search-input" class="visually-hidden">Search</label>
-            <input type="search" id="search-input" class="query-wrapper" placeholder="Search" />
-        </div>
-        <button type="submit" class="search-field-wrapper" aria-label="Submit search">
-            <div class="icon-magnifyingglass-wrapper">
-                <img class="icon-magnifyingglass" src="img/magnifyingglass.svg" alt="" />
-            </div>
-        </button>
-    </form>
+
+    </div>
+
+</nav>
+
 </header>
