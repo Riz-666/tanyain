@@ -65,7 +65,7 @@
                                     alt="{{ $item['user']->nama }}" />
                                 <div class="author-details">
                                     <span class="text-wrapper-3">{{ $item['user']->nama }}</span>
-                                    <span class="text-wrapper-4 ">{{ ucfirst($item['type']) }}</span>
+                                    <span class="text-wrapper-4 ">{{ ucfirst($item['status']) }}</span>
                                 </div>
                             </div>
                         </footer>

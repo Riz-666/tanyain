@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar fixed-top">
     <div class="container">
         <div class="logo">TanyaIn</div>
 
