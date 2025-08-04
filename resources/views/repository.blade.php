@@ -35,7 +35,7 @@
                                         </p>
                                         <p class="card-text text-muted small">
                                         </p>
-                                    </div>
+                                    </div> 
                                     <div class="col-md-3">
                                         <div class="article-meta">
                                             <p class="article-date">{{ $r->created_at }}</p>

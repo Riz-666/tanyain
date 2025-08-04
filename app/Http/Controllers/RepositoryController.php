@@ -13,13 +13,12 @@ class RepositoryController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $repo = Repositori::latest()->paginate(5);
+            $repo = Repositori::latest()->withCount('fileRepo')->paginate(5);
         } else {
             $repo = Repositori::with('user', 'artikel')->withCount('fileRepo')->where('status', 'publik')->latest()->paginate(5);
         }
 
         $totalRepo = Repositori::count();
-
         return view('repository', [
             'repo' => $repo,
             'totalRepo' => $totalRepo,
@@ -40,7 +39,6 @@ class RepositoryController extends Controller
             'file_tambahan.*' => 'nullable|mimes:pdf,doc,docx,zip,xlsx,jpg,jpeg,png,gif|max:1048576',
         ]);
 
-        // Simpan repositori (tanpa file utama)
         $repositori = Repositori::create([
             'user_id' => auth()->id(),
             'judul_repo' => $request->judul,
@@ -48,7 +46,6 @@ class RepositoryController extends Controller
             'status' => $request->status,
         ]);
 
-        // Simpan file tambahan jika ada
         if ($request->hasFile('file_tambahan')) {
             foreach ($request->file('file_tambahan') as $fileTambahan) {
                 $nama = time() . '_' . $fileTambahan->getClientOriginalName();

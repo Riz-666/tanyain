@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="author-detail">
-                                <a href="{{ Route('repo.detail',$artikel->repositori->id) }}" class="btn btn-primary" style="width: 100%">Lihat Repositori Artikel</a>
+                                <a href="{{ Route('repo.detail',$artikel->repositori->id) }}" class="btn btn-primary" style="width: 100%">Lihat Repositori Terkait</a>
                             </div>
                         </div>
                     </div>
@@ -34,6 +34,9 @@
                     <p>{!! $artikel->isi !!}</p>
                 </div>
                 <hr>
+                <div class="file-artikel">
+                    <embed src="{{ asset('storage/artikel-file/'.$artikel->file) }}" type="application/pdf" style="height: 1000px; width:100%">
+                </div>
             </div>
         </div>
     </div>

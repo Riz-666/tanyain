@@ -47,7 +47,7 @@ class IndexController extends Controller
                     'id' => $r->id,
                     'judul' => $r->judul_repo,
                     'isi' => $r->deskripsi,
-                    'created_at' => $r->created_at,
+                    'created_at' => $r->created_at, 
                     'user' => $r->user,
                     'status' => $r->status,
                 ]);
