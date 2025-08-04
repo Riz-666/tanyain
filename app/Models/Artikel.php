@@ -15,14 +15,16 @@ class Artikel extends Model
         'judul',
         'slug',
         'isi',
+        'file',
         'status',
-        'views'];
+        'views'
+    ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
- 
+
     public function repositori()
     {
         return $this->belongsTo(Repositori::class);

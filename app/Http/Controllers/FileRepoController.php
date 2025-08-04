@@ -19,9 +19,8 @@ class FileRepoController extends Controller
         $path = preg_replace('#/+#', '/', $path);
         $path = str_replace('public/', '', $path);
 
-        // Pastikan folder tambahan_file dipisah
         if (!str_contains($path, 'tambahan_file/')) {
-            $path = str_replace('tambahan_file', 'tambahan_file/', $path);
+            $path = str_replace('tambahan_file', 'tambahan_file/',  $path);
         }
 
         $fullPath = public_path('storage/' . $path);
@@ -48,7 +47,7 @@ class FileRepoController extends Controller
         $path = str_replace('tambahan_file', 'tambahan_file/', $path);
     }
 
-    $fullPath = public_path('storage/' . $path);
+    $fullPath = public_path('storage/' . $path); 
 
     if (!file_exists($fullPath)) {
         return redirect()->back()->with('error', 'Tidak ada file untuk diunduh.');

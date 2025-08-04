@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('slug')->unique();
             $table->text('isi');
+            $table->string('file')->nullable();
             $table->enum('status',['publik','private']);
             $table->integer('views')->nullable(0);
             $table->timestamps();

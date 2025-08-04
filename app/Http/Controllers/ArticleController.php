@@ -47,10 +47,19 @@ class ArticleController extends Controller
             'judul' => 'required',
             'isi' => 'required',
             'file' => 'mimes:pdf,doc,docx,zip,xlxs,jpg,jpeg,png,gif|max:1048576',
+        ],[
+            'file.files' => 'Format Dokumen Tidak Di Dukung.',
+            'file.max' => 'Ukuran File Terlalu Besar.'
         ]);
 
         $repo = Repositori::find($validatedData['repositori_id']);
         $status = $repo ? $repo->status : 'publik';
+
+        $filename = null;
+        if($request->hasFile('file')){
+            $filename = time().'_'.$request->file('file')->getClientOriginalName();
+            $request->file('file')->storeAs('public/artikel-file',$filename);
+        }
 
         $artikel = Artikel::create([
             'user_id' => auth()->id(),
@@ -58,6 +67,7 @@ class ArticleController extends Controller
             'judul' => $validatedData['judul'],
             'slug' => Str::slug($validatedData['judul']),
             'isi' => $validatedData['isi'],
+            'file' => $filename,
             'status' => $status,
             'views' => 0,
         ]);

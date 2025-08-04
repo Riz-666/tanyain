@@ -423,7 +423,7 @@
     }
 
     .dropdown:hover .dropdown-menu {
-        display: flex;
+        display: block;
     }
 
     .dropdown-menu a {
