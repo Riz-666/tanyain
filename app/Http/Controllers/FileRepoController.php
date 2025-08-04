@@ -20,7 +20,7 @@ class FileRepoController extends Controller
         $path = str_replace('public/', '', $path);
 
         if (!str_contains($path, 'tambahan_file/')) {
-            $path = str_replace('tambahan_file', 'tambahan_file/',  $path);
+            $path = str_replace('tambahan_file', 'tambahan_file/', $path);
         }
 
         $fullPath = public_path('storage/' . $path);
@@ -36,34 +36,44 @@ class FileRepoController extends Controller
     }
 
     public function showFile($id)
-{
-    $file = FileRepo::findOrFail($id);
+    {
+        $file = FileRepo::findOrFail($id);
 
-    // Normalisasi path
-    $path = str_replace('\\', '/', $file->path);
-    $path = preg_replace('#/+#', '/', $path);
-    $path = str_replace('public/', '', $path);
-    if (!str_contains($path, 'tambahan_file/')) {
-        $path = str_replace('tambahan_file', 'tambahan_file/', $path);
+        // Normalisasi path
+        $path = str_replace('\\', '/', $file->path);
+        $path = preg_replace('#/+#', '/', $path);
+        $path = str_replace('public/', '', $path);
+        if (!str_contains($path, 'tambahan_file/')) {
+            $path = str_replace('tambahan_file', 'tambahan_file/', $path);
+        }
+
+        $fullPath = public_path('storage/' . $path);
+
+        if (!file_exists($fullPath)) {
+            return redirect()->back()->with('error', 'Tidak ada file untuk diunduh.');
+        }
+
+        $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+
+        if ($extension === 'pdf') {
+            return response()->file($fullPath, [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $file->nama_file . '"',
+            ]);
+        } else {
+            return response()->download($fullPath, $file->nama_file);
+        }
     }
 
-    $fullPath = public_path('storage/' . $path); 
+    public function destroy($id)
+    {
+        $file = FileRepo::findOrFail($id);
 
-    if (!file_exists($fullPath)) {
-        return redirect()->back()->with('error', 'Tidak ada file untuk diunduh.');
+        if (\Storage::disk('public')->exists($file->path)) {
+            \Storage::disk('public')->delete($file->path);
+        }
+
+        $file->delete();
+        return back();
     }
-
-
-    $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-
-    if ($extension === 'pdf') {
-
-        return response()->file($fullPath, [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $file->nama_file . '"',
-        ]);
-    } else {
-        return response()->download($fullPath, $file->nama_file);
-    }
-}
 }

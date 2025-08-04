@@ -37,18 +37,50 @@
                             aria-selected="false">Repositori</button>
                     </div>
                     <div class="tab-content" id="nav-tabContent">
+
                         <!-- Article Tab -->
+                        <!-- Artikel Tab -->
                         <div class="tab-pane fade show active" id="nav-article" role="tabpanel"
                             aria-labelledby="nav-article-tab">
                             <div class="article-list">
                                 @foreach ($user->artikel as $ua)
-                                    <div class="article-item">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="article-title"><a href="{{ Route('article.detail',$ua->id) }}">{{ $ua->judul }}</a> <span class="view-count"><i class="bi bi-eye"></i>{{ $ua->views }}</span></h5>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="article-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h5 class="article-title">
+                                                        <a
+                                                            href="{{ Route('article.detail', $ua->id) }}">{{ $ua->judul }}</a>
+                                                        <span class="view-count"><i
+                                                                class="bi bi-eye"></i>{{ $ua->views }}</span>
+                                                    </h5>
+                                                </div>
+                                                <p class="article-excerpt">{!! $ua->isi !!}</p>
+                                            </div>
                                         </div>
-                                        <p class="article-excerpt">{!! $ua->isi !!}</p>
-                                        <hr>
+                                        <div class="col-md-4 text-end">
+                                            @if (auth()->check() && auth()->id() === $ua->user_id)
+                                                <div class="d-inline-block me-2">
+                                                    <a href="{{ route('edit.artikel', $ua->id) }}" role="button"
+                                                        class="btn btn-warning btn-sm">
+                                                        <i class="fa fa-edit"></i> Edit Article
+                                                    </a>
+                                                </div>
+
+                                                <div class="d-inline-block">
+                                                    <form action="{{ route('artikel.destroy', $ua->id) }}" method="POST"
+                                                        onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-trash"></i> Hapus Artikel
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
+                                    <hr>
                                 @endforeach
                             </div>
                         </div>
@@ -56,19 +88,46 @@
                         <!-- Repository Tab -->
                         <div class="tab-pane fade" id="nav-repository" role="tabpanel" aria-labelledby="nav-repository-tab">
                             <div class="repository-list">
-
                                 @foreach ($user->repositori as $ur)
-                                    <div class="article-item">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="article-title"><a href="{{ Route('repo.detail',$ur->id) }}">{{ $ur->judul_repo }}</a> <span class="view-count"></h5>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="article-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h5 class="article-title">
+                                                        <a
+                                                            href="{{ Route('repo.detail', $ur->id) }}">{{ $ur->judul_repo }}</a>
+                                                        <span class="view-count"></span>
+                                                    </h5>
+                                                </div>
+                                                <p class="article-excerpt">{!! $ur->deskripsi !!}</p>
+                                            </div>
                                         </div>
-                                        <p class="article-excerpt">{!! $ur->deskripsi !!}</p>
-                                        <hr>
-                                    </div>
-                                @endforeach
+                                        <div class="col-md-4 text-end">
+                                            @if (auth()->check() && auth()->id() === $ur->user_id)
+                                                <div class="d-inline-block me-2">
+                                                    <a href="{{ Route('edit.repo', $ur->id) }}" role="button"
+                                                        class="btn btn-warning btn-sm">
+                                                        <i class="fa fa-edit"></i> Edit Repository
+                                                    </a>
+                                                </div>
 
+                                                <div class="d-inline-block">
+                                                    <form action="{{ route('repo.destroy', $ur->id) }}" method="POST"
+                                                        onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-trash"></i> Hapus Repository
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <hr>
+                                @endforeach
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -63,7 +63,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     {{-- SweetAlert --}}
-    <script src="{{ asset('sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     {{-- FontAwesome --}}
     <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
@@ -116,6 +116,16 @@
             });
         });
     </script>
+
+    <script>
+    @if(session('auth'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Dilarang Akses Halaman Ini !!!',
+        })
+    @endif
+</script>
 </body>
 
 </html>
