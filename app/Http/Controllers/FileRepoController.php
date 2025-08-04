@@ -15,9 +15,9 @@ class FileRepoController extends Controller
         $file = FileRepo::findOrFail($id);
 
         // Normalisasi path
-        $path = str_replace('\\', '/', $file->path); // pastikan pake slash /
-        $path = preg_replace('#/+#', '/', $path); // hilangkan slash ganda
-        $path = str_replace('public/', '', $path); // hapus prefix "public/" kalau ada
+        $path = str_replace('\\', '/', $file->path);
+        $path = preg_replace('#/+#', '/', $path);
+        $path = str_replace('public/', '', $path);
 
         // Pastikan folder tambahan_file dipisah
         if (!str_contains($path, 'tambahan_file/')) {
@@ -27,7 +27,7 @@ class FileRepoController extends Controller
         $fullPath = public_path('storage/' . $path);
 
         if (!file_exists($fullPath)) {
-            dd('File not found', $fullPath); // debug dulu kalau masih error
+            return redirect()->back()->with('error', 'Tidak ada file untuk ditinjau.');
         }
 
         return response()->file($fullPath, [
@@ -51,20 +51,19 @@ class FileRepoController extends Controller
     $fullPath = public_path('storage/' . $path);
 
     if (!file_exists($fullPath)) {
-        dd('File not found', $fullPath);
+        return redirect()->back()->with('error', 'Tidak ada file untuk diunduh.');
     }
 
-    // Ambil ekstensi file (tanpa titik)
+
     $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
 
     if ($extension === 'pdf') {
-        // Tampilkan PDF di browser
+
         return response()->file($fullPath, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="' . $file->nama_file . '"',
         ]);
     } else {
-        // Paksa download file lainnya (zip, docx, dll)
         return response()->download($fullPath, $file->nama_file);
     }
 }

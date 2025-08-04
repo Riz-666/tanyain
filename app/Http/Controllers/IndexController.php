@@ -35,6 +35,7 @@ class IndexController extends Controller
                     'isi' => $a->isi,
                     'created_at' => $a->created_at,
                     'user' => $a->user,
+                    'status' => $a->status,
                 ]);
             }
         }
@@ -48,6 +49,7 @@ class IndexController extends Controller
                     'isi' => $r->deskripsi,
                     'created_at' => $r->created_at,
                     'user' => $r->user,
+                    'status' => $r->status,
                 ]);
             }
         }

@@ -2,6 +2,12 @@
 
 @section('body')
     <div class="container mt-4">
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <!-- Article Title and Info -->
@@ -12,7 +18,8 @@
                     </div>
                     <div class="article-author-info">
                         <div class="author-avatar-container">
-                            <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar" alt="Profile">
+                            <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar"
+                                alt="Profile">
                         </div>
                         <div class="author-detail">
                             <p class="author-name">{{ $repo->user->nama }}</p>
@@ -48,10 +55,11 @@
                                     @endphp
                                     <td>
                                         @if ($ext === 'pdf')
-                                            <a href="{{ route('file.pdf', $r->id) }}" target="_blank"
+                                            <a href="{{ route('file.pdf', $r->id) }}"
                                                 class="btn btn-info btn-sm">Lihat Dokumen</a>
                                         @else
-                                            <a href="{{ route('file.show', $r->id) }}" class="btn btn-info btn-sm">Unduh</a>
+                                            <a href="{{ route('file.show', $r->id) }}"
+                                                class="btn btn-info btn-sm">Unduh</a>
                                         @endif
                                     </td>
                                 </tr>
@@ -65,7 +73,8 @@
                     @endif
                     @foreach ($repo->artikel as $ra)
                         <br>
-                        {{ $loop->iteration }}. <a href="{{ Route('article.detail',$ra->id) }}" style="font-style: italic">{{ $ra->judul }}</a>
+                        {{ $loop->iteration }}. <a href="{{ Route('article.detail', $ra->id) }}"
+                            style="font-style: italic">{{ $ra->judul }}</a>
                         <br>
                     @endforeach
                 </div>
