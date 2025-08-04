@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use App\Models\FileRepo;
 use App\Models\Repositori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class RepositoryController extends Controller
@@ -73,5 +75,61 @@ class RepositoryController extends Controller
         return view('repositori_detail', [
             'repo' => $repo,
         ]);
+    }
+
+    public function edit($id)
+    {
+        $repo = Repositori::with('fileRepo')->findOrFail($id);
+        if ($repo->user_id !== auth()->id()) {
+            return redirect()->route('index')->with('auth', 'Akses ditolak: kamu bukan pemilik repositori ini.');
+        }
+        return view('edit_repositori', compact('repo'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $repo = Repositori::findOrFail($id);
+        $repo->judul_repo = $request->judul;
+        $repo->deskripsi = $request->isi;
+        $repo->status = $request->status;
+        $repo->save();
+
+        if ($request->hasFile('file_tambahan')) {
+            foreach ($request->file('file_tambahan') as $file) {
+                $nama = $file->getClientOriginalName();
+                $ext = $file->getClientOriginalExtension();
+                $size = $file->getSize();
+                $path = $file->storeAs('repository/tambahan_file', $nama, 'public');
+
+                FileRepo::create([
+                    'repositori_id' => $repo->id,
+                    'nama_file' => $nama,
+                    'path' => $path,
+                    'ekstensi' => $ext,
+                    'ukuran' => $size,
+                ]);
+            }
+        }
+
+        return redirect()->route('repo.detail', $repo->id);
+    }
+
+    public function destroy($id)
+    {
+        $repo = Repositori::with('fileRepo')->findOrFail($id);
+
+        foreach ($repo->fileRepo as $file) {
+            $path = 'repository/tambahan_file/' . $file->nama_file;
+            if (Storage::disk('public')->exists($path)) {
+                Storage::disk('public')->delete($path);
+            }
+        }
+        FileRepo::where('repositori_id', $repo->id)->delete();
+
+        Artikel::where('repositori_id', $repo->id)->delete();
+
+        $repo->delete();
+
+        return redirect()->back()->with('success', 'Repositori dan seluruh datanya berhasil dihapus.');
     }
 }

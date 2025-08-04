@@ -1,5 +1,6 @@
 @extends('components.app')
 @section('body')
+
     <header class="header">
         @if (Auth::check() && Auth::user()->role === 'user')
             <h1 class="text-wrapper">Wellcome, {{ Auth::user()->nama }}</h1>
@@ -15,7 +16,13 @@
             </a>
         @endif
     </header>
-
+    <div class="container">
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+    </div>
     <main class="frame mt-5">
         <div class="mb-4">
             <form method="GET" action="{{ route('index') }}">
@@ -28,7 +35,7 @@
         </div>
         @if ($items->count() > 0)
             @foreach ($items as $item)
-                <a href="{{ $item['type'] === 'artikel' ? route('article.detail', $item['id']) : '#' }}"
+                <a href="{{ $item['type'] === 'artikel' ? route('article.detail', $item['id']) : route('repo.detail', $item['id']) }}"
                     style="width: 100%">
                     <article class="background-border">
                         <h2 class="link-a-better">{{ $item['judul'] }}</h2>

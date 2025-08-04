@@ -39,11 +39,15 @@ use Illuminate\Support\Facades\Route;
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     //Route buat artikel
-
     Route::get('/article/create', [ArticleController::class, 'create_article'])->middleware('role:user')->name('article.create');
     Route::post('/article/add', [ArticleController::class, 'add_artikel'])->middleware('role:user')->name('add.artikel');
     Route::get('/article', [ArticleController::class, 'article'])->name('article');
     Route::get('/article/{id}', [ArticleController::class, 'article_detail'])->name('article.detail');
+    //edit artikel
+    Route::get('/artikel/edit/{id}', [ArticleController::class, 'edit'])->middleware('role:user')->name('edit.artikel');
+    Route::post('/artikel/update/{id}', [ArticleController::class, 'update'])->middleware('role:user')->name('update.artikel');
+    //hapus
+    Route::post('/artikel/hapus/{id}', [ArticleController::class, 'destroy'])->middleware('role:user')->name('artikel.destroy');
 
     //Route buat repo
     Route::get('/repository', [RepositoryController::class, 'index'])->name('repository');
@@ -53,9 +57,16 @@ use Illuminate\Support\Facades\Route;
     //aksi
     Route::get('/file/pdf/{id}', [FileRepoController::class, 'showPdf'])->name('file.pdf');
     Route::get('/file/{id}', [FileRepoController::class, 'showFile'])->name('file.show');
-
+    //edit
+    Route::get('/repo/{id}/edit', [RepositoryController::class, 'edit'])->middleware('role:user')->name('edit.repo');
+    Route::post('/repo/update/{id}', [RepositoryController::class, 'update'])->middleware('role:user')->name('update.repo');
+    //hapus repo
+    Route::post('/hapus-repo/{id}', [RepositoryController::class, 'destroy'])->middleware('role:user')->name('repo.destroy');
+    // hapus file 1/1
+    Route::post('/filerepo/{id}', [FileRepoController::class, 'destroy'])->middleware('role:user')->name('fileRepo.destroy');
 
     //search
     Route::get('/search', [SearchController::class, 'index'])->name('search.all');
 
-    Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');
+    //profile
+    Route::get('/profile/{id}', [ProfileController::class, 'profile'])->middleware('role:user')->name('profile');
