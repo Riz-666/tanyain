@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
-
     public function index()
     {
-        $filter = request()->query('filter');
+        $filter = request('filter');
         $perPage = 5;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
@@ -55,7 +54,15 @@ class IndexController extends Controller
 
         $items = $items->sortByDesc('created_at')->values();
 
-        $pagedItems = new LengthAwarePaginator($items->forPage($currentPage, $perPage), $items->count(), $perPage, $currentPage, ['path' => request()->url(), 'query' => request()->query()]);
+        $pagedItems = new LengthAwarePaginator
+                    ($items->forPage($currentPage, $perPage),
+                    $items->count(),
+                        $perPage,
+                        $currentPage,
+                        [
+                            'path' => request()->url(),
+                            'query' => request()->query()
+                        ]);
 
         return view('index', [
             'items' => $pagedItems,
