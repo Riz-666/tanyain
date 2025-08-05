@@ -39,7 +39,7 @@
 
         <hr class="mt-4 mb-3">
 
-        <div class="text-center">
+        <div class="text-center mb-0">
             <small>&copy; 2025 TanyaIn. Hak Cipta Dilindungi.</small>
         </div>
     </div>

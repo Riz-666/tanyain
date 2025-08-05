@@ -18,13 +18,17 @@
                         </div>
                         <div class="col-md-9">
                             <div class="author-detail">
-                                <p class="author-name">{{ $artikel->user->nama }}</p>
+                                <a href="{{ Route('profile', $artikel->user->id) }}">
+                                    <p class="badge bg-secondary text-center mt-1 author-name">{{ $artikel->user->nama }}
+                                    </p>
+                                </a>
                                 <p class="author-stats">15.3k</p>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="author-detail">
-                                <a href="{{ Route('repo.detail',$artikel->repositori->id) }}" class="btn btn-primary" style="width: 100%">Lihat Repositori Terkait</a>
+                                <a href="{{ Route('repo.detail', $artikel->repositori->id) }}" class="btn btn-primary"
+                                    style="width: 100%">Lihat Repositori Terkait</a>
                             </div>
                         </div>
                     </div>
@@ -35,7 +39,8 @@
                 </div>
                 <hr>
                 <div class="file-artikel">
-                    <embed src="{{ asset('storage/artikel-file/'.$artikel->file) }}" type="application/pdf" style="height: 1000px; width:100%">
+                    <embed src="{{ asset('storage/artikel-file/' . $artikel->file) }}" type="application/pdf"
+                        style="height: 1000px; width:100%">
                 </div>
             </div>
         </div>

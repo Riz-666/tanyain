@@ -8,17 +8,25 @@
                 <div class="profile-card">
                     <div class="profile-info d-flex align-items-center">
                         <div class="profile-image">
-                            <img src="{{ asset('storage/user-img/default-user.jpg') }}" alt="Profile Image"
-                                class="rounded-circle">
+                            @if (Auth::user()->foto == null)
+                                <img src="{{ asset('storage/user-img/default-user.jpg') }}" alt=""
+                                    class="rounded-circle">
+                            @else
+                                <img src="{{ asset('storage/user-img/' . Auth::user()->foto) }}" alt=""
+                                    class="rounded-circle">
+                            @endif
                         </div>
                         <div class="profile-details ms-3">
-                            <h3 class="profile-name">Your Name</h3>
-                            <p class="profile-username text-muted">@username</p>
-                            <p class="profile-description">Deskripsi Diri</p>
+                            <h3 class="profile-name">{{ Auth::user()->nama }}</h3>
+                            <p class="profile-username text-muted">{{ Auth::user()->username }}</p>
+                            <p class="profile-description">{{ Auth::user()->bio }}</p>
                             <div class="profile-social-icons">
-                                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+                                <a href="{{ Auth::user()->instagram }}" class="social-icon" target="_blank"><i
+                                        class="bi bi-instagram"></i></a>
+                                <a href="{{ Auth::user()->linkedin }}" class="social-icon" target="_blank"><i
+                                        class="bi bi-github"></i></a>
+                                <a href="{{ Auth::user()->github }}" class="social-icon" target="_blank"><i
+                                        class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>

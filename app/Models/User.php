@@ -21,9 +21,13 @@ class User extends Authenticatable
         'name',
         'username',
         'email',
+        'bio',
         'password',
         'foto',
-        'role'
+        'role',
+        'instagram',
+        'linkedin',
+        'github',
     ];
 
     /**
@@ -56,7 +60,7 @@ class User extends Authenticatable
         return $this->hasMany(Repositori::class);
     }
 
-    public function viewArtikel() 
+    public function viewArtikel()
     {
         return $this->hasMany(ViewArtikel::class);
     }
