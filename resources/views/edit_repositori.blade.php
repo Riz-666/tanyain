@@ -38,9 +38,9 @@
                     <li class="mb-2">
                         {{ $file->nama_file }}
                         <form action="{{ route('fileRepo.destroy', $file->id) }}" method="POST"
-                            class="d-inline-block ms-2">
+                            class="d-inline-block ms-2" id="form-delete-{{ $file->id }}">
                             @csrf
-                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                            <button type="button" data-id="{{ $file->id }}" class="btn btn-sm btn-danger btn-delete">Hapus</button>
                         </form>
                     </li>
                 @endforeach

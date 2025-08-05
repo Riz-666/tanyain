@@ -9,7 +9,7 @@
                     <h2 class="article-title">{{ $artikel->judul }}</h2>
                     <div class="article-info">
                         <span class="article-date">Dibuat {{ $artikel->created_at }}</span>
-                        <span class="article-views">Dilihat {{ $artikel->views }}</span>
+                        <span class="article-views">Dilihat {{ $artikel->viewArtikel->count() }}</span>
                     </div>
                     <div class="article-author-info">
                         <div class="author-avatar-container">
@@ -39,8 +39,10 @@
                 </div>
                 <hr>
                 <div class="file-artikel">
-                    <embed src="{{ asset('storage/artikel-file/' . $artikel->file) }}" type="application/pdf"
+                    @if($artikel->file)
+                        <embed src="{{ asset('storage/artikel-file/' . $artikel->file) }}" type="application/pdf"
                         style="height: 1000px; width:100%">
+                    @endif
                 </div>
             </div>
         </div>

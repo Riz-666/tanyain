@@ -26,7 +26,8 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="d-flex align-items-center mb-2">
-                                            <span class="view-count"><i class="bi bi-eye"></i> {{ $art->views }}</span>
+                                                <span class="view-count"><i class="bi bi-eye"></i>
+                                                    {{ $art->viewArtikel->count() }}</span>
                                             <h5 class="card-title mb-0">{{ $art->judul }}</h5>
                                         </div>
                                         <p class="card-text text-muted small">
@@ -63,6 +64,3 @@
         </nav>
     </div>
 @endsection
-
-
-

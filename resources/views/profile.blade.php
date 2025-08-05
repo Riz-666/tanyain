@@ -46,7 +46,6 @@
                     </div>
                     <div class="tab-content" id="nav-tabContent">
 
-                        <!-- Article Tab -->
                         <!-- Artikel Tab -->
                         <div class="tab-pane fade show active" id="nav-article" role="tabpanel"
                             aria-labelledby="nav-article-tab">
@@ -77,13 +76,14 @@
 
                                                 <div class="d-inline-block">
                                                     <form action="{{ route('artikel.destroy', $ua->id) }}" method="POST"
-                                                        onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
+                                                        id="form-delete-{{ $ua->id }}">
                                                         @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                        <button type="button" class="btn btn-danger btn-sm btn-delete"
+                                                            data-id="{{ $ua->id }}">
                                                             <i class="fa fa-trash"></i> Hapus Artikel
                                                         </button>
                                                     </form>
+
                                                 </div>
                                             @endif
                                         </div>
@@ -121,9 +121,10 @@
 
                                                 <div class="d-inline-block">
                                                     <form action="{{ route('repo.destroy', $ur->id) }}" method="POST"
-                                                        onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
+                                                        id="form-delete-{{ $ur->id }}">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                        <button type="button" data-id="{{ $ur->id }}"
+                                                            class="btn btn-danger btn-sm btn-delete">
                                                             <i class="fa fa-trash"></i> Hapus Repository
                                                         </button>
                                                     </form>

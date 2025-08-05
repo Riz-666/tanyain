@@ -99,7 +99,7 @@ class RepositoryController extends Controller
                 $nama = $file->getClientOriginalName();
                 $ext = $file->getClientOriginalExtension();
                 $size = $file->getSize();
-                $path = $file->storeAs('repository/tambahan_file', $nama, 'public');
+                $path = $file->storeAs('repositori/tambahan_file', $nama, 'public');
 
                 FileRepo::create([
                     'repositori_id' => $repo->id,
@@ -111,7 +111,7 @@ class RepositoryController extends Controller
             }
         }
 
-        return redirect()->route('repo.detail', $repo->id);
+        return redirect()->route('repo.detail', $repo->id)->with('success', 'Repository Berhasil Di Perbarui');
     }
 
     public function destroy($id)
@@ -119,7 +119,7 @@ class RepositoryController extends Controller
         $repo = Repositori::with('fileRepo')->findOrFail($id);
 
         foreach ($repo->fileRepo as $file) {
-            $path = 'repository/tambahan_file/' . $file->nama_file;
+            $path = 'repositori/tambahan_file/' . $file->nama_file;
             if (Storage::disk('public')->exists($path)) {
                 Storage::disk('public')->delete($path);
             }

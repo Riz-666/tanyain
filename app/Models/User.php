@@ -52,12 +52,12 @@ class User extends Authenticatable
 
     public function artikel()
     {
-        return $this->hasMany(Artikel::class);
+        return $this->hasMany(Artikel::class)->latest();
     }
 
     public function repositori()
     {
-        return $this->hasMany(Repositori::class);
+        return $this->hasMany(Repositori::class)->latest();
     }
 
     public function viewArtikel()

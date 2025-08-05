@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class ViewArtikel extends Model
 {
     protected $table = 'view_artikel';
+    public $timestamps = false;
+
     protected $fillable = [
-        'artikel_id',
-        'user_id',
-        'ip_address',
-        'waktu'
+        'artikel_id', 'user_id', 'ip_address', 'waktu'
     ];
 
     public function artikel()

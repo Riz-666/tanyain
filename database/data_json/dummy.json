@@ -1,12 +1,12 @@
 {
   "artikel": [
     { "id": 1, "user_id": 2, "judul": "Dampak Teknologi di Dunia Pendidikan", "slug": "dampak-teknologi-di-dunia-pendidikan", "isi": "<p>Isi artikel 1</p>", "created_at": "2025-07-25T10:00:00", "views": 0, "repositori_id": 1 },
-    { "id": 2, "user_id": 2, "judul": "Penerapan AI dalam Keseharian", "slug": "penerapan-ai-dalam-keseharian", "isi": "<p>Isi artikel 2</p>", "created_at": "2025-07-26T09:20:00", "views": 0, "repositori_id": 2 },
+    { "id": 2, "user_id": 2, "judul": "Penerapan AI dalam Keseharian", "slug": "penerapan-ai-dalam-keseharian", "isi": "<p>Isi artikel 2</p>", "created_at": "2025-07-26T09:20:00", "views": 0,"status":"private", "repositori_id": 2 },
     { "id": 3, "user_id": 2, "judul": "Analisis Sosial Media", "slug": "analisis-sosial-media", "isi": "<p>Isi artikel 3</p>", "created_at": "2025-07-27T13:00:00", "views": 0, "repositori_id": 3 },
     { "id": 4, "user_id": 2, "judul": "Perkembangan E-Government", "slug": "perkembangan-e-government", "isi": "<p>Isi artikel 4</p>", "created_at": "2025-07-27T14:30:00", "views": 0, "repositori_id": 4 },
-    { "id": 5, "user_id": 2, "judul": "Kecerdasan Buatan dan Etika", "slug": "kecerdasan-buatan-dan-etika", "isi": "<p>Isi artikel 5</p>", "created_at": "2025-07-28T10:45:00", "views": 0, "repositori_id": 5 },
+    { "id": 5, "user_id": 2, "judul": "Kecerdasan Buatan dan Etika", "slug": "kecerdasan-buatan-dan-etika", "isi": "<p>Isi artikel 5</p>", "created_at": "2025-07-28T10:45:00", "views": 0,"status":"private", "repositori_id": 5 },
     { "id": 6, "user_id": 2, "judul": "Sistem Informasi Akademik", "slug": "sistem-informasi-akademik", "isi": "<p>Isi artikel 6</p>", "created_at": "2025-07-28T12:00:00", "views": 0, "repositori_id": 6 },
-    { "id": 7, "user_id": 2, "judul": "Cloud Computing dan Data", "slug": "cloud-computing-dan-data", "isi": "<p>Isi artikel 7</p>", "created_at": "2025-07-29T08:10:00", "views": 0, "repositori_id": 7 },
+    { "id": 7, "user_id": 2, "judul": "Cloud Computing dan Data", "slug": "cloud-computing-dan-data", "isi": "<p>Isi artikel 7</p>", "created_at": "2025-07-29T08:10:00", "views": 0, "status":"private",  "repositori_id": 7 },
     { "id": 8, "user_id": 2, "judul": "Perbandingan Framework Web", "slug": "perbandingan-framework-web", "isi": "<p>Isi artikel 8</p>", "created_at": "2025-07-29T10:25:00", "views": 0, "repositori_id": 8 },
     { "id": 9, "user_id": 2, "judul": "Rekayasa Perangkat Lunak", "slug": "rekayasa-perangkat-lunak", "isi": "<p>Isi artikel 9</p>", "created_at": "2025-07-30T09:30:00", "views": 0, "repositori_id": 9 },
     { "id": 10, "user_id": 2, "judul": "Manajemen Proyek IT", "slug": "manajemen-proyek-it", "isi": "<p>Isi artikel 10</p>", "created_at": "2025-07-30T11:15:00", "views": 0, "repositori_id": 10 }

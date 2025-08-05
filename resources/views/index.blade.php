@@ -67,9 +67,13 @@
                         <footer class="background">
                             <p class="p">dibuat {{ $item['created_at'] }}</p>
                             <div class="author-info">
-                                <img class="topchef-s-user"
-                                    src="{{ asset($item['user']->foto ? 'storage/user-img/' . $item['user']->id : 'storage/user-img/default-user.jpg') }}"
-                                    alt="{{ $item['user']->nama }}" />
+
+                                @if($item['user']->foto)
+                                    <img class="topchef-s-user" src="{{ asset('storage/user-img/'.$item['user']->foto) }}" alt="{{ $item['user']->nama }}">
+                                @else
+                                    <img class="topchef-s-user" src="{{ asset('storage/user-img/default-user.jpg') }}" alt="{{ $item['user']->nama }}">
+                                @endif
+                                
                                 <div class="author-details">
                                     <span class="text-wrapper-3">{{ $item['user']->nama }}</span>
                                     <span class="text-wrapper-4 ">{{ ucfirst($item['status']) }}</span>

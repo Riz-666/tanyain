@@ -21,26 +21,27 @@
                         @endif
                     </a>
                     <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li class="dropdown-item text-center">
-                            @if (Auth::user()->foto)
-                            <a href="{{ route('profile', Auth::user()->id) }}">
-                                <img class="avatar dropdown-avatar mb-2"
-                                    src="{{ asset('storage/user-img/' . Auth::user()->foto) }}"></a>
-                            @else
-                            <a href="{{ route('profile', Auth::user()->id) }}">
-                                <img class="avatar dropdown-avatar mb-2"
-                                    src="{{ asset('storage/user-img/default-user.jpg') }}"></a>
-                            @endif
-                            <p class="email mb-0">{{ Auth::user()->nama }}</p>
-                            <p class="email mb-0">#{{ Auth::user()->username }}</p>
-                            <p class="email mb-0">{{ Auth::user()->email }}</p>
-                        </li>
+                        <a href="{{ route('profile', Auth::user()->id) }}">
+                            <li class="dropdown-item text-center" >
+                                @if (Auth::user()->foto)
+                                    <img class="avatar dropdown-avatar mb-2"
+                                        src="{{ asset('storage/user-img/' . Auth::user()->foto) }}">
+                                @else
+                                    <img class="avatar dropdown-avatar mb-2"
+                                        src="{{ asset('storage/user-img/default-user.jpg') }}">
+                                @endif
+                                <p class="email mb-0">{{ Auth::user()->nama }}</p>
+                                <p class="email mb-0">{{ Auth::user()->username }}</p>
+                                <p class="email mb-0">{{ Auth::user()->email }}</p>
+                            </li>
+                        </a>
                         <li>
                             <hr>
                         </li>
                         <li>
                             <a class="dropdown-item edit-title text-start" style="margin-left: 5px"
-                                href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-gear"></i> Setting</a>
+                                href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-gear"></i>
+                                Setting</a>
                         </li>
 
                         <li>
