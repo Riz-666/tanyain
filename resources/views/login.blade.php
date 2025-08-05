@@ -15,26 +15,23 @@
         @endif
             <div class="card-body p-5">
                 <div class="text-center mb-4">
-                    <h3 class="text-orange">Logo</h3>
+                    <h3 class="text-orange">Login</h3>
                 </div>
 
                 <form method="POST" action="{{ route('auth') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" required>
+                        <input type="text" class="form-control" id="email" name="email">
                     </div>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between">
                             <label for="password" class="form-label">Password</label>
-                            <a href="#" class="text-decoration-none" style="color: #f48223; font-size: 0.9rem;">Forgot
-                                password?</a>
+
                         </div>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="password" name="password" required>
-                            <span class="input-group-text">
-                                <i class="bi bi-eye-slash" id="togglePassword"></i>
-                            </span>
+                            <input type="password" class="form-control" id="password" name="password">
+
                         </div>
                     </div>
 
@@ -46,20 +43,5 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            const icon = this;
-
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.classList.remove('bi-eye-slash');
-                icon.classList.add('bi-eye');
-            } else {
-                passwordInput.type = 'password';
-                icon.classList.remove('bi-eye');
-                icon.classList.add('bi-eye-slash');
-            }
-        });
-    </script>
+   
 @endsection

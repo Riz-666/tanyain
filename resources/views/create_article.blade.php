@@ -38,7 +38,7 @@
                             <div class="mb-4">
                                 <label class="form-label">Tautkan ke Repositori</label>
                                 <p class="text-muted small">Artikel Bisa Dita utkan ke dalam Repository</p>
-                                <select name="repositori_id" class="form-select">
+                                <select name="repositori_id" class="form-select" id="selectRepo">
                                     <option value="">-- Pilih Repositori --</option>
                                     @foreach ($repositori as $repo)
                                         <option value="{{ $repo->id }}">{{ $repo->judul_repo }}</option>

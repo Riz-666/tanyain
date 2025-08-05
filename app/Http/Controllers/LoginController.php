@@ -44,7 +44,7 @@ class LoginController extends Controller
         if ($user->role === 'admin') {
             return redirect()->route('admin.dashboard');
         } elseif ($user->role === 'user') {
-            return redirect()->route('dashboard.user');
+            return redirect()->route('dashboard.user')->with('login', 'Selamat Datang '.Auth::user()->nama);
         } else {
             return redirect()->route('login')->withErrors('Data / Akun Tidak Sesuai')->withInput();
         }
@@ -53,6 +53,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('index');
+        return redirect()->route('index')->with('login', 'Berhasil Logout');
     }
 }

@@ -63,17 +63,17 @@ class FileRepoController extends Controller
         } else {
             return response()->download($fullPath, $file->nama_file);
         }
-    }
+    } 
 
     public function destroy($id)
     {
         $file = FileRepo::findOrFail($id);
-
-        if (\Storage::disk('public')->exists($file->path)) {
-            \Storage::disk('public')->delete($file->path);
+        $path = 'repositori/tambahan_file/' . $file->nama_file;
+        if (\Storage::disk('public')->exists($path)) {
+            \Storage::disk('public')->delete($path);
         }
 
         $file->delete();
-        return back();
+        return back()->with('success', 'File Berhasil Di Hapus');
     }
 }

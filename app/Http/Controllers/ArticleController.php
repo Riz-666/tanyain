@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\Repositori;
+use App\Models\viewArtikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -25,10 +26,28 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function article_detail(string $id)
+    public function article_detail(Request $request, string $id)
     {
         $artikel = Artikel::with('user', 'viewArtikel', 'repositori')->findOrFail($id);
-        $repo = Repositori::with('artikel')->first();
+
+        // Coba buat views/ip
+        $userId = Auth()->id();
+        $ip = $request->ip();
+
+        $sudahDilihat = viewArtikel::where('artikel_id', $artikel->id)
+            ->when($userId, fn($q) => $q->where('user_id', $userId))
+            ->when(!$userId, fn($q) => $q->where('ip_address', $ip))
+            ->exists();
+
+        if (!$sudahDilihat) {
+            viewArtikel::create([
+                'artikel_id' => $artikel->id,
+                'user_id' => $userId,
+                'ip_address' => $ip,
+                'created_at' => now(),
+            ]);
+        }
+
         return view('article_detail', [
             'artikel' => $artikel,
         ]);
@@ -76,7 +95,7 @@ class ArticleController extends Controller
             'views' => 0,
         ]);
 
-        return redirect()->route('article')->with('success', 'tArtikel berhasil ditambahkan');
+        return redirect()->route('article')->with('success', 'Artikel berhasil ditambahkan');
     }
 
     public function edit(string $id)
@@ -100,11 +119,13 @@ class ArticleController extends Controller
             'judul' => 'required|string|max:255',
             'isi' => 'required|string',
             'file' => 'nullable|file|mimes:pdf|max:1048576',
+            'repositori_id' => 'nullable|exists:repositori,id',
         ]);
 
         $artikel = Artikel::findOrFail($id);
         $artikel->judul = $request->judul;
         $artikel->isi = $request->isi;
+        $artikel->repositori_id = $request->repositori_id;
 
         if ($request->hasFile('file')) {
             if ($artikel->file && file_exists(public_path('storage/artikel-file/' . $artikel->file))) {
@@ -122,18 +143,22 @@ class ArticleController extends Controller
         return redirect()->route('article.detail', $artikel->id)->with('success', 'Artikel berhasil diperbarui.');
     }
 
-    public function destroy($id)
+    public function destroy(string $id)
     {
         $artikel = Artikel::findOrFail($id);
 
-        // Hapus file dari storage kalau ada
-        if ($artikel->file) {
-            Storage::delete('public/artikel-file/' . $artikel->file);
+        $path = 'artikel-file/' . $artikel->file;
+
+        if (\Storage::disk('public')->exists($path)) {
+            \Storage::disk('public')->delete($path);
         }
 
-        // Hapus data artikel dari database
         $artikel->delete();
 
-        return redirect()->route('profile')->with('success', 'Artikel berhasil dihapus.');
+        return redirect()
+            ->route('profile', Auth::user()->id)
+            ->with('success', 'Artikel berhasil dihapus.');
     }
+
+    // PERCOBAAN
 }

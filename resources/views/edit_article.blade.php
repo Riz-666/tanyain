@@ -28,7 +28,8 @@
                         <div class="col-md-12">
                             <div class="mb-4">
                                 <label class="form-label">Upload File Article (Optional)</label>
-                                <p class="text-muted small">Jika artikel yang di upload adalah yang sudah tersimpan atau dalam
+                                <p class="text-muted small">Jika artikel yang di upload adalah yang sudah tersimpan atau
+                                    dalam
                                     bentuk PDF, artikel bisa diupload disini</p>
                                 <input type="file" name="file" class="form-control" id="fileInput">
                                 <br>
@@ -49,12 +50,11 @@
                         <div class="col-md-12">
                             <div class="mb-4">
                                 <label class="form-label">Tautkan ke Repositori</label>
-                                <p class="text-muted small">Artikel Bisa Dita utkan ke dalam Repository</p>
-                                <select name="repositori_id" class="form-select">
-                                    <option value="">-- Pilih Repositori --</option>
+                                <p class="text-muted small">Artikel Bisa Ditautkan ke dalam Repository</p>
+                                <select id="editArtikel" name="repositori_id" class="form-control">
                                     @foreach ($repositori as $repo)
                                         <option value="{{ $repo->id }}"
-                                            {{ old('repositori_id', $artikel->repositori_id ?? '') == $repo->id ? 'selected' : '' }}>
+                                            {{ isset($artikel) && $artikel->repositori_id == $repo->id ? 'selected' : '' }}>
                                             {{ $repo->judul_repo }}
                                         </option>
                                     @endforeach
@@ -69,4 +69,8 @@
     </div>
     </div>
     </div>
+
+    
 @endsection
+
+

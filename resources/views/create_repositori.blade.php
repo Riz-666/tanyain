@@ -23,18 +23,15 @@
                         <p class="text-muted small">Tuliskan Deskripsi Repositori anda</p>
                         <textarea id="editor2" class="form-control editor-area" name="isi" rows="8"></textarea>
                     </div>
-                    
-                    {{-- Kontainer untuk input file tambahan --}}
+
                     <div class="row" id="file-container"></div>
 
-                    {{-- Tombol tambah file --}}
                     <div class="row mb-4">
                         <div class="col-md-12">
                             <button type="button" class="btn btn-secondary" onclick="tambahFile()">Tambah File</button>
                         </div>
                     </div>
 
-                    {{-- Status Repositori --}}
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-4">
