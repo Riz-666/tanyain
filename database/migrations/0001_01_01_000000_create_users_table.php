@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('nama',50);
             $table->string('username',30)->unique();
             $table->string('email')->unique();
+            $table->string('bio',255)->nullable();
             $table->enum('role',['super_admin', 'user']);
             $table->string('foto')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('github')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -31,6 +31,8 @@
                                 <img class="avatar dropdown-avatar mb-2"
                                     src="{{ asset('storage/user-img/default-user.jpg') }}"></a>
                             @endif
+                            <p class="email mb-0">{{ Auth::user()->nama }}</p>
+                            <p class="email mb-0">#{{ Auth::user()->username }}</p>
                             <p class="email mb-0">{{ Auth::user()->email }}</p>
                         </li>
                         <li>
@@ -38,7 +40,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item edit-title text-start" style="margin-left: 5px"
-                                href="{{ route('profile', Auth::user()->id) }}"><i class="fa fa-gear"></i> Setting</a>
+                                href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-gear"></i> Setting</a>
                         </li>
 
                         <li>

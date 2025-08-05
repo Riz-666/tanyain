@@ -70,3 +70,5 @@ use Illuminate\Support\Facades\Route;
 
     //profile
     Route::get('/profile/{id}', [ProfileController::class, 'profile'])->middleware('role:user')->name('profile');
+    Route::get('/profile/edit/{id}', [ProfileController::class, 'edit_profile'])->middleware('role:user')->name('profile.edit');
+    Route::post('/profile/update/{id}', [ProfileController::class, 'update_profile'])->middleware('role:user')->name('profile.update');

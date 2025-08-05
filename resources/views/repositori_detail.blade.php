@@ -22,7 +22,9 @@
                                 alt="Profile">
                         </div>
                         <div class="author-detail">
-                            <p class="author-name">{{ $repo->user->nama }}</p>
+                            <a href="{{ Route('profile', $repo->user->id) }}">
+                                <p class="badge bg-secondary text-center mt-1 author-name">{{ $repo->user->nama }}</p>
+                            </a>
                             <p class="author-stats">15.3k</p>
                         </div>
                     </div>
@@ -55,8 +57,8 @@
                                     @endphp
                                     <td>
                                         @if ($ext === 'pdf')
-                                            <a href="{{ route('file.pdf', $r->id) }}"
-                                                class="btn btn-info btn-sm">Lihat Dokumen</a>
+                                            <a href="{{ route('file.pdf', $r->id) }}" class="btn btn-info btn-sm">Lihat
+                                                Dokumen</a>
                                         @else
                                             <a href="{{ route('file.show', $r->id) }}"
                                                 class="btn btn-info btn-sm">Unduh</a>
