@@ -17,15 +17,15 @@
                             @endif
                         </div>
                         <div class="profile-details ms-3">
-                            <h3 class="profile-name">{{ Auth::user()->nama }}</h3>
-                            <p class="profile-username text-muted">{{ Auth::user()->username }}</p>
-                            <p class="profile-description">{{ Auth::user()->bio }}</p>
+                            <h3 class="profile-name">{{ $user->nama }}</h3>
+                            <p class="profile-username text-muted">{{ $user->username }}</p>
+                            <p class="profile-description">{{ $user->bio }}</p>
                             <div class="profile-social-icons">
-                                <a href="{{ Auth::user()->instagram }}" class="social-icon" target="_blank"><i
+                                <a href="{{ $user->instagram }}" class="social-icon" target="_blank"><i
                                         class="bi bi-instagram"></i></a>
-                                <a href="{{ Auth::user()->linkedin }}" class="social-icon" target="_blank"><i
+                                <a href="{{ $user->linkedin }}" class="social-icon" target="_blank"><i
                                         class="bi bi-github"></i></a>
-                                <a href="{{ Auth::user()->github }}" class="social-icon" target="_blank"><i
+                                <a href="{{ $user->github }}" class="social-icon" target="_blank"><i
                                         class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
