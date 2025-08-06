@@ -62,7 +62,11 @@
                                                                 class="bi bi-eye"></i>{{ $ua->views }}</span>
                                                     </h5>
                                                 </div>
-                                                <p class="article-excerpt">{!! $ua->isi !!}</p>
+                                                <div class="isi-artikel">
+                                                <p class="article-excerpt">
+                                                    {{ \Illuminate\Support\Str::limit(strip_tags($ua->isi), 1000) }}
+                                                </p>
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-end">
@@ -245,6 +249,15 @@
             font-size: 14px;
             color: #6c757d;
             margin-bottom: 5px;
+
+        }
+
+        .isi-artikel p{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            max-width: 100%;
         }
     </style>
 @endsection

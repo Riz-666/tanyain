@@ -26,20 +26,25 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="d-flex align-items-center mb-2">
-                                                <span class="view-count"><i class="bi bi-eye"></i>
-                                                    {{ $art->viewArtikel->count() }}</span>
+                                            <span class="view-count"><i class="bi bi-eye"></i>
+                                                {{ $art->viewArtikel->count() }}</span>
                                             <h5 class="card-title mb-0">{{ $art->judul }}</h5>
                                         </div>
                                         <p class="card-text text-muted small">
-                                            {!! $art->isi !!}
+                                            {{ \Illuminate\Support\Str::limit(strip_tags($art->isi), 1000) }}
                                         </p>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="article-meta">
                                             <p class="article-date">{{ $art->created_at }}</p>
                                             <div class="article-author">
+
+                                                @if($art->user->foto)
+                                                    <img src="{{ asset('storage/user-img/'.$art->user->foto) }}" alt="{{ $art->user->nama }}" class="author-avatar">
+                                                @else
                                                 <img src="{{ asset('storage/user-img/default-user.jpg') }}"
                                                     class="author-avatar" alt="Profile">
+                                                @endif
                                                 <div class="author-info">
                                                     <p class="author-name">{{ $art->user->nama }}</p>
                                                     <span
