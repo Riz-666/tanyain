@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="container mt-4">
-        <h1 class="mb-4">Tambah Article</h1>
+        <h1 class="mb-4">Tambah Repository</h1>
         <form action="{{ Route('add.repo') }}" method="POST" enctype="multipart/form-data">
             @csrf
 

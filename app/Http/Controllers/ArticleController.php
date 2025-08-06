@@ -29,7 +29,6 @@ class ArticleController extends Controller
     public function article_detail(Request $request, string $id)
     {
         $artikel = Artikel::with('user', 'viewArtikel', 'repositori')->findOrFail($id);
-
         // Coba buat views/ip
         $userId = Auth()->id();
         $ip = $request->ip();
@@ -66,7 +65,7 @@ class ArticleController extends Controller
             [
                 'repositori_id' => 'exists:repositori,id',
                 'judul' => 'required',
-                'isi' => 'required',
+                'isi' => 'nullable',
                 'file' => 'mimes:pdf|max:1048576',
             ],
             [

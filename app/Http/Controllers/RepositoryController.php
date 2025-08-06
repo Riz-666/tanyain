@@ -120,8 +120,8 @@ class RepositoryController extends Controller
 
         foreach ($repo->fileRepo as $file) {
             $path = 'repositori/tambahan_file/' . $file->nama_file;
-            if (Storage::disk('public')->exists($path)) {
-                Storage::disk('public')->delete($path);
+            if (\Storage::disk('public')->exists($path)) {
+                \Storage::disk('public')->delete($path);
             }
         }
         FileRepo::where('repositori_id', $repo->id)->delete();

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('repositori_id')->nullable();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->text('isi');
+            $table->text('isi')->nullable();
             $table->string('file')->nullable();
             $table->enum('status',['publik','private']);
             $table->integer('views')->nullable(0);

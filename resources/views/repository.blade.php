@@ -35,13 +35,17 @@
                                         </p>
                                         <p class="card-text text-muted small">
                                         </p>
-                                    </div> 
+                                    </div>
                                     <div class="col-md-3">
                                         <div class="article-meta">
                                             <p class="article-date">{{ $r->created_at }}</p>
                                             <div class="article-author">
+                                                @if($r->user->foto)
+                                                    <img src="{{ asset('storage/user-img/'.$r->user->foto) }}" alt="{{ $r->user->nama }}" class="author-avatar">
+                                                @else
                                                 <img src="{{ asset('storage/user-img/default-user.jpg') }}"
                                                     class="author-avatar" alt="Profile">
+                                                @endif
                                                 <div class="author-info">
                                                     <p class="author-name">{{ $r->user->nama }}</p>
                                                     <span
