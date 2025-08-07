@@ -28,7 +28,7 @@
             <div id="file-container" class="mb-3"></div>
             <button type="button" class="btn btn-secondary mb-3" onclick="tambahFile()">Tambah File Baru</button>
             <br>
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <button type="submit" class="btn btn-orange w-80">Simpan Perubahan</button>
         </form>
 
         <div class="mb-3 mt-5">

@@ -40,6 +40,7 @@
 
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/repository.css') }}">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleguide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
@@ -118,7 +119,7 @@
                 responsive: true,
                 columnDefs: [{
                     defaultContent: "-",
-                    targets: "_all" 
+                    targets: "_all"
                 }],
             });
         });

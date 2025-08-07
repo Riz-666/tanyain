@@ -1,0 +1,10 @@
+.artikel-terkait a:hover{
+    background-color: orange;
+    border-radius: 20px;
+    color: white;
+}
+
+.artikel-terkait a{
+    transition: 0.3s;
+    padding: 5px 5px;
+}

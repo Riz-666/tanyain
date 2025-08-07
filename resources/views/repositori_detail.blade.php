@@ -18,7 +18,7 @@
                     </div>
                     <div class="article-author-info">
                         <div class="author-avatar-container">
-                            <img src="{{ asset('storage/user-img/'. $repo->user->foto) }}" class="author-avatar"
+                            <img src="{{ asset('storage/user-img/' . $repo->user->foto) }}" class="author-avatar"
                                 alt="Profile">
                         </div>
                         <div class="author-detail">
@@ -69,16 +69,18 @@
                         </tbody>
                     </table>
                     <hr>
-                    <p style="font-size: large; font-style:oblique; color:#f48223;">Artikel Terkait : </p>
-                    @if ($repo->artikel->isEmpty())
-                        <p class="badge bg-info">Tidak Ada Artikel Terkait</p>
-                    @endif
-                    @foreach ($repo->artikel as $ra)
-                        <br>
-                        {{ $loop->iteration }}. <a href="{{ Route('article.detail', $ra->id) }}"
-                            style="font-style: italic">{{ $ra->judul }}</a>
-                        <br>
-                    @endforeach
+                    <div class="artikel-terkait">
+                        <p style="font-size: large; font-style:oblique; color:#f48223;">Artikel Terkait : </p>
+                        @if ($repo->artikel->isEmpty())
+                            <p class="badge bg-info">Tidak Ada Artikel Terkait</p>
+                        @endif
+                        @foreach ($repo->artikel as $ra)
+                            <br>
+                            {{ $loop->iteration }}. <a href="{{ Route('article.detail', $ra->id) }}"
+                                style="font-style: italic">{{ $ra->judul }}</a>
+                            <br>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

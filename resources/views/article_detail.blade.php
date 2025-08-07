@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="author-detail">
-                                <a href="{{ Route('repo.detail', $artikel->repositori->id) }}" class="btn btn-primary"
+                                <a href="{{ Route('repo.detail', $artikel->repositori->id) }}" class="btn btn-orange"
                                     style="width: 100%">Lihat Repositori Terkait</a>
                             </div>
                         </div>
