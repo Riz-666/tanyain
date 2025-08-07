@@ -118,7 +118,7 @@
                 responsive: true,
                 columnDefs: [{
                     defaultContent: "-",
-                    targets: "_all"
+                    targets: "_all" 
                 }],
             });
         });

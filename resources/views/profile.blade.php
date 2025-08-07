@@ -8,13 +8,19 @@
                 <div class="profile-card">
                     <div class="profile-info d-flex align-items-center">
                         <div class="profile-image">
-                            @if (Auth::user()->foto == null)
-                                <img src="{{ asset('storage/user-img/default-user.jpg') }}" alt=""
-                                    class="rounded-circle">
+                            @if (Auth::check())
+                                @if (Auth::user()->foto == null)
+                                    <img src="{{ asset('storage/user-img/default-user.jpg') }}" alt=""
+                                        class="rounded-circle">
+                                @else
+                                    <img src="{{ asset('storage/user-img/' . $user->foto) }}" alt=""
+                                        class="rounded-circle">
+                                @endif
                             @else
-                                <img src="{{ asset('storage/user-img/' . Auth::user()->foto) }}" alt=""
+                                <img src="{{ asset('storage/user-img/' . $user->foto) }}" alt=""
                                     class="rounded-circle">
                             @endif
+
                         </div>
                         <div class="profile-details ms-3">
                             <h3 class="profile-name">{{ $user->nama }}</h3>
@@ -63,10 +69,10 @@
                                                     </h5>
                                                 </div>
                                                 <div class="isi-artikel">
-                                                <p class="article-excerpt">
-                                                    {{ \Illuminate\Support\Str::limit(strip_tags($ua->isi), 1000) }}
-                                                </p>
-                                            </div>
+                                                    <p class="article-excerpt">
+                                                        {{ \Illuminate\Support\Str::limit(strip_tags($ua->isi), 1000) }}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4 text-end">
@@ -252,7 +258,7 @@
 
         }
 
-        .isi-artikel p{
+        .isi-artikel p {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

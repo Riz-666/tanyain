@@ -34,12 +34,14 @@ class RepositoryController extends Controller
 
     public function add_repo(Request $request)
     {
-        $request->validate([
-            'judul' => 'required|string',
-            'isi' => 'nullable|string',
-            'status' => 'required|in:publik,private',
-            'file_tambahan.*' => 'nullable|mimes:pdf,doc,docx,zip,xlsx,jpg,jpeg,png,gif|max:1048576',
-        ]);
+        $request->validate(
+            [
+                'judul' => 'required|string',
+                'isi' => 'nullable|string',
+                'status' => 'required|in:publik,private',
+                'file_tambahan.*' => 'nullable|mimes:pdf,doc,docx,zip,xlsx,jpg,jpeg,png,gif|max:1048576',
+            ],
+        );
 
         $repositori = Repositori::create([
             'user_id' => auth()->id(),
