@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
     Route::get('/', [IndexController::class, 'index'])->name('index');
+
     //login & Auth Login
     Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login/auth', [LoginController::class, 'auth'])->name('auth');
@@ -35,7 +36,7 @@ use Illuminate\Support\Facades\Route;
         return view('redirect');
     });
 
-    Route::get('/dashboard/user', [IndexController::class, 'index'])->name('dashboard.user');
+    Route::get('/dashboard/user', [IndexController::class, 'index'])->middleware('role:user')->name('dashboard.user');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     //Route buat artikel

@@ -16,7 +16,7 @@ class RoleMiddleware
     public function handle($request, Closure $next, $role)
     {
         if (!auth()->check()) {
-            return redirect()->route('index')->with('auth', 'Dilarang akses halaman ini');
+            return redirect()->route('index')->with('auth', 'Kamu tidak punya akses ke halaman ini');
         }
 
         if (auth()->user()->role !== $role) {
