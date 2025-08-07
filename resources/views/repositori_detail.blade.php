@@ -18,7 +18,7 @@
                     </div>
                     <div class="article-author-info">
                         <div class="author-avatar-container">
-                            <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar"
+                            <img src="{{ asset('storage/user-img/'. $repo->user->foto) }}" class="author-avatar"
                                 alt="Profile">
                         </div>
                         <div class="author-detail">

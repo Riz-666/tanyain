@@ -13,8 +13,13 @@
                     </div>
                     <div class="article-author-info">
                         <div class="author-avatar-container">
-                            <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar"
+                            @if($artikel->user->foto)
+                                <img src="{{ asset('storage/user-img/'.$artikel->user->foto) }}" class="author-avatar"
                                 alt="Profile">
+                            @else
+                                <img src="{{ asset('storage/user-img/default-user.jpg') }}" class="author-avatar"
+                                alt="Profile">
+                            @endif
                         </div>
                         <div class="col-md-9">
                             <div class="author-detail">
@@ -22,7 +27,7 @@
                                     <p class="badge bg-secondary text-center mt-1 author-name">{{ $artikel->user->nama }}
                                     </p>
                                 </a>
-                                <p class="author-stats">15.3k</p>
+                                <p class="author-stats mt-1">Status Konten : {{ $artikel->status }}</p>
                             </div>
                         </div>
                         <div class="col-md-2">
