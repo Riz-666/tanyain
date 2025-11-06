@@ -1,0 +1,1398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.repo-header {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8ecf0;
+    position: relative;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.breadcrumb a {
+    color: #f48223;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.repo-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.repo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f48223, #ff9f4f);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.repo-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.meta-item .icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-public {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.status-private {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+}
+
+.repo-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons .btn {
+    padding: 10px 18px;
+    border: 2px solid #e8ecf0;
+    background: white;
+    color: #666;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f48223, #ff9f4f);
+    color: white;
+    border-color: #f48223;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 4px 15px rgba(244, 130, 35, 0.4);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border: 1px solid #e8ecf0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content button {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.dropdown-content button:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-content button.danger {
+    color: #dc3545;
+}
+
+.dropdown-content button.danger:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+}
+
+/* Files Section */
+.files-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8ecf0;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title .icon {
+    width: 20px;
+    height: 20px;
+    fill: #f48223;
+}
+
+/* Data Table */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e8ecf0;
+}
+
+/* ===== Custom DataTables untuk #repo-files / .data-table ===== */
+#repo-files_wrapper {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+
+#repo-files_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+#repo-files_wrapper .dataTables_filter input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 2px solid #f48223;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#repo-files_wrapper .dataTables_filter input:focus {
+    border-color: #e67b1a;
+    box-shadow: 0 0 0 3px rgba(244, 130, 35, 0.1);
+}
+
+#repo-files_wrapper .dataTables_length select {
+    border: 2px solid #f48223;
+    border-radius: 6px;
+    padding: 8px 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#repo-files_wrapper .dataTables_length select:focus {
+    border-color: #e67b1a;
+    box-shadow: 0 0 0 3px rgba(244, 130, 35, 0.1);
+}
+
+#repo-files {
+    border-spacing: 0;
+    border-collapse: separate;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#repo-files thead th {
+    background-color: #f97316; /* orange-500 */
+    color: white;
+    border: none;
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+}
+
+#repo-files thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+#repo-files thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+#repo-files tbody tr {
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+#repo-files tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#repo-files tbody tr:hover {
+    background-color: rgba(244, 130, 35, 0.05);
+    transform: scale(1.01);
+}
+
+#repo-files tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+/* ===== File Info & Action Buttons Styling ===== */
+#repo-files .file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#repo-files .file-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f48223, #ff9f4f);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#repo-files .file-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+#repo-files .file-details {
+    min-width: 0;
+    flex: 1;
+}
+
+#repo-files .file-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 2px;
+    word-break: break-all;
+}
+
+#repo-files .file-path {
+    font-size: 12px;
+    color: #7f8c8d;
+    word-break: break-all;
+}
+
+#repo-files .file-type-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+#repo-files .type-code {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+}
+
+#repo-files .type-doc {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #7b1fa2;
+}
+
+#repo-files .type-image {
+    background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+    color: #2e7d32;
+}
+
+#repo-files .type-config {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: #ef6c00;
+}
+
+#repo-files .table-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+#repo-files .action-btn {
+    padding: 6px 10px;
+    border: 1px solid #e8ecf0;
+    background: white;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+#repo-files .action-btn:hover {
+    border-color: #f48223;
+    color: #f48223;
+    transform: translateY(-1px);
+}
+
+#repo-files .action-btn.danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+#repo-files .action-btn.danger:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* ===== Pagination & Info Styling ===== */
+#repo-files_wrapper .dataTables_info {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+#repo-files_wrapper .dataTables_paginate .paginate_button {
+    padding: 8px 12px !important;
+    margin: 15px 2px !important;
+    border-radius: 6px !important;
+    border: 2px solid #f48223 !important;
+    background: white !important;
+    color: #f48223 !important;
+    transition: all 0.3s ease !important;
+}
+
+#repo-files_wrapper .dataTables_paginate .paginate_button:hover,
+#repo-files_wrapper .dataTables_paginate .paginate_button.current {
+    background: #f48223 !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+#repo-files_wrapper .dataTables_paginate .paginate_button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* File Info in Table */
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f48223, #ff9f4f);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+.file-details {
+    min-width: 0;
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 2px;
+    word-break: break-all;
+}
+
+.file-path {
+    font-size: 12px;
+    color: #7f8c8d;
+    word-break: break-all;
+}
+
+.file-size {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.file-date {
+    color: #7f8c8d;
+}
+
+.file-type-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.type-code {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+}
+
+.type-doc {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #7b1fa2;
+}
+
+.type-image {
+    background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+    color: #2e7d32;
+}
+
+.type-config {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: #ef6c00;
+}
+
+/* Action buttons in table */
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    border: 1px solid #e8ecf0;
+    background: white;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    border-color: #f48223;
+    color: #f48223;
+    transform: translateY(-1px);
+}
+
+.action-btn.danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.action-btn.danger:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Custom DataTables Styling */
+.dataTables_filter {
+    margin-bottom: 15px; /* atur sesuai kebutuhan */
+}
+
+/* Biar search input lebih rapi */
+.dataTables_filter input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+    border: 2px solid #f48223;
+    border-radius: 6px;
+    padding: 8px 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.dataTables_filter input:focus,
+.dataTables_length select:focus {
+    border-color: #e67b1a;
+    box-shadow: 0 0 0 3px rgba(244, 130, 35, 0.1);
+}
+
+table.dataTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+table.dataTable thead th {
+    background: linear-gradient(135deg, #f48223 0%, #e67b1a 100%);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+
+table.dataTable thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table.dataTable thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table.dataTable tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+table.dataTable tbody tr:hover {
+    background: rgba(244, 130, 35, 0.05);
+    transform: scale(1.01);
+}
+
+table.dataTable tbody td {
+    padding: 15px;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Table Stats */
+.table-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stats-info {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.stats-summary {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+.stat-number {
+    font-weight: 600;
+    color: #f48223;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #7f8c8d;
+}
+
+.empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    fill: #bdc3c7;
+}
+
+.empty-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.empty-description {
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .repo-header {
+        padding: 20px;
+    }
+    .repo-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .action-buttons {
+        position: static;
+        margin-top: 20px;
+        justify-content: flex-start;
+    }
+    .repo-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .files-section {
+        padding: 20px;
+    }
+    .table-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .stats-summary {
+        gap: 15px;
+    }
+
+    /* Hide table on mobile */
+    .table-container {
+        display: none !important;
+    }
+
+    /* Show card layout on mobile */
+    .mobile-cards {
+        display: block;
+    }
+
+    .file-card {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e5e7eb;
+    }
+
+    .file-card-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .file-icon {
+        width: 36px !important;
+        height: 36px !important;
+        background: #f3f4f6;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .file-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: #6b7280;
+    }
+
+    .file-main-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .file-name {
+        font-weight: 600;
+        font-size: 16px;
+        color: #111827;
+        margin-bottom: 4px;
+        word-break: break-word;
+    }
+
+    .file-path {
+        font-size: 12px;
+        color: #6b7280;
+        word-break: break-word;
+    }
+
+    .file-card-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+        padding: 12px;
+        background: #f9fafb;
+        border-radius: 8px;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .meta-label {
+        font-size: 12px;
+        color: #6b7280;
+        font-weight: 500;
+        margin-bottom: 2px;
+    }
+
+    .meta-value {
+        font-size: 14px;
+        color: #111827;
+        font-weight: 500;
+    }
+
+    .file-type-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .type-doc {
+        background-color: #dbeafe;
+        color: #1e40af;
+    }
+
+    .file-card-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .action-btn {
+        flex: 1;
+        min-width: 0;
+        padding: 8px 12px !important;
+        border-radius: 6px;
+        font-size: 14px !important;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .action-btn:first-child {
+        background-color: #3b82f6;
+        color: white;
+    }
+
+    .action-btn:first-child:hover {
+        background-color: #2563eb;
+    }
+
+    .action-btn:nth-child(2) {
+        background-color: #10b981;
+        color: white;
+    }
+
+    .action-btn:nth-child(2):hover {
+        background-color: #059669;
+    }
+
+    .btn-delete-permanent {
+        background-color: #ef4444 !important;
+        color: white !important;
+        flex: 1;
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .btn-delete-permanent:hover {
+        background-color: #dc2626 !important;
+    }
+}
+
+/* Desktop styles - hide mobile cards */
+@media (min-width: 769px) {
+    .mobile-cards {
+        display: none;
+    }
+}
+
+/* ===== Dark Mode for Repo Page ===== */
+/* Dark mode untuk sel table */
+.dark #repo-files tbody td {
+    background-color: #1a1a1a; /* warna gelap untuk sel */
+    color: #e0e0e0;           /* teks terang */
+    border-color: #3b3b4f;    /* optional: border antar sel */
+}
+
+/* Hover baris tetap lebih terang */
+.dark #repo-files tbody tr:hover td {
+    background-color: rgb(58, 58, 58);
+
+}
+
+.dark #repo-files .file-name {
+    color: #f1f1f1; /* teks terang supaya terbaca */
+}
+
+
+
+/* Repo Header */
+.dark .repo-header {
+    background-color: #242424;
+    border-color: #3b3b4f;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark .breadcrumb {
+    color: #bbbbbb;
+}
+
+.dark .breadcrumb a {
+    color: #ff9f4f;
+}
+
+.dark .repo-title {
+    color: #ffffff;
+}
+
+.dark .repo-meta .meta-item {
+    color: #cccccc;
+}
+
+.dark .status-public {
+    background: linear-gradient(135deg, #1b4531, #28573f);
+    color: #a0e0a0;
+}
+
+.dark .status-private {
+    background: linear-gradient(135deg, #661a1a, #7e2323);
+    color: #ff7f7f;
+}
+
+.dark .repo-description {
+    color: #cccccc;
+}
+
+/* Buttons */
+.dark .action-buttons .btn {
+    background-color: #2a2a3d;
+    border-color: #3b3b4f;
+    color: #e0e0e0;
+}
+
+.dark .btn-primary {
+    background: linear-gradient(135deg, #ff7f2a, #ffa64f);
+    color: #1e1e2f;
+}
+
+.dark .dropdown-content {
+    background-color: #2a2a3d;
+    border-color: #3b3b4f;
+}
+
+.dark .dropdown-content a {
+    color: #e0e0e0;
+}
+
+.dark .dropdown-content a:hover {
+    background-color: #3b3b4f;
+}
+
+.dark .dropdown-content a.danger {
+    color: #ff7f7f;
+}
+
+/* Files Section */
+.dark .files-section {
+    background-color: #242424;
+    border-color: #3b3b4f;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark .section-title {
+    color: #ffffff;
+}
+
+.dark .section-title .icon {
+    fill: #ff9f4f;
+}
+
+/* DataTables Table */
+.dark table.dataTable {
+    background-color: #2a2a3d;
+    color: #e0e0e0;
+}
+
+.dark table.dataTable tbody tr {
+    background-color: #2a2a3d;
+}
+
+.dark table.dataTable tbody tr:nth-child(even) {
+    background-color: #252535;
+}
+
+.dark table.dataTable tbody tr:hover {
+    background-color: rgba(255, 127, 42, 0.1);
+}
+
+.dark table.dataTable thead th {
+    background: #ff7f2a;
+    color: #1e1e2f;
+}
+
+/* File Info & Badges */
+.dark .file-name {
+    color: #ffffff;
+}
+
+.dark .file-path,
+.dark .file-size,
+.dark .file-date {
+    color: #bbbbbb;
+}
+
+.dark .file-icon {
+    background: linear-gradient(135deg, #ff7f2a, #ffa64f);
+}
+
+.dark .file-type-badge.type-code {
+    background: linear-gradient(135deg, #1565c0, #90caf9);
+    color: #e0e0e0;
+}
+
+.dark .file-type-badge.type-doc {
+    background: linear-gradient(135deg, #7b1fa2, #ce93d8);
+    color: #e0e0e0;
+}
+
+.dark .file-type-badge.type-image {
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    color: #e0e0e0;
+}
+
+.dark .file-type-badge.type-config {
+    background: linear-gradient(135deg, #ef6c00, #ffb74d);
+    color: #e0e0e0;
+}
+
+/* Table Action Buttons */
+.dark .action-btn {
+    background: #2a2a3d;
+    border-color: #3b3b4f;
+    color: #e0e0e0;
+}
+
+.dark .action-btn:hover {
+    background-color: #2a2a3d;
+    border-color: #ff7f2a;
+    color: #ff7f2a;
+}
+
+.dark .action-btn.danger {
+    color: #ff7f7f;
+    border-color: #ff7f7f;
+}
+
+.dark .action-btn.danger:hover {
+    background: #ff7f7f;
+    color: #1e1e2f;
+}
+
+/* Pagination & Info */
+.dark .dataTables_wrapper .dataTables_info {
+    color: #cccccc;
+}
+
+.dark .dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: #2a2a3d !important;
+    color: #ff7f2a !important;
+    border-color: #ff7f2a !important;
+}
+
+.dark .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dark .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #ff7f2a !important;
+    color: #1e1e2f !important;
+}
+/* Dark mode untuk action buttons di table */
+.dark #repo-files .action-btn {
+    background-color: #3b3b4f; /* gelap */
+    color: #f1f1f1;           /* teks terang */
+    border-color: #5a5a70;    /* border gelap tapi kontras */
+}
+
+.dark #repo-files .action-btn:hover {
+    background-color: #50506a;
+    color: #ff9f4f;           /* warna accent saat hover */
+    border-color: #ff9f4f;
+}
+
+.dark #repo-files .action-btn.danger {
+    background-color: #5c1a1a;
+    color: #f8d7da;
+    border-color: #721c24;
+}
+
+.dark #repo-files .action-btn.danger:hover {
+    background-color: #721c24;
+    color: white;
+}
+/* Dark mode untuk search input */
+.dark #repo-files_wrapper .dataTables_filter input
+ {
+    background-color: #3b3b4f;
+    color: #f1f1f1;
+    border-color: #5a5a70;
+}
+.dark #repo-files_wrapper .dataTables_filter label{
+    color: white;
+}
+
+.dark #repo-files_wrapper .dataTables_filter input:focus {
+    background-color: #3b3b4f;
+    color: #fff;
+    border-color: #ff9f4f;
+    box-shadow: 0 0 0 3px rgba(255, 159, 79, 0.2);
+}
+
+/* Dark mode untuk info text di table */
+.dark #repo-files_wrapper .dataTables_info {
+    color: #dcdcdc;
+}
+
+/* Dark mode untuk select length dropdown */
+.dark #repo-files_wrapper .dataTables_length select {
+    background-color: #3b3b4f;
+    color: #f1f1f1;
+    border-color: #5a5a70;
+}
+.dark #repo-files_wrapper .dataTables_length label{
+    color: white;
+}
+
+.dark #repo-files_wrapper .dataTables_length select:focus {
+    background-color: #3b3b4f;
+    color: #fff;
+    border-color: #ff9f4f;
+    box-shadow: 0 0 0 3px rgba(255, 159, 79, 0.2);
+}
+
+
+/* Dark Mode untuk Mobile Cards */
+@media (max-width: 768px) {
+    /* File Card Dark Mode */
+    .dark .file-card {
+        background-color: #2a2a3d;
+        border-color: #3b3b4f;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* File Card Header */
+    .dark .file-card-header .file-icon {
+        background: linear-gradient(135deg, #ff7f2a, #ffa64f);
+    }
+
+    .dark .file-card-header .file-icon svg {
+        fill: #1e1e2f;
+    }
+
+    .dark .file-main-info .file-name {
+        color: #ffffff;
+    }
+
+    .dark .file-main-info .file-path {
+        color: #bbbbbb;
+    }
+
+    /* File Card Meta Section */
+    .dark .file-card-meta {
+        background-color: #1a1a1a;
+        border-color: #3b3b4f;
+    }
+
+    .dark .meta-item .meta-label {
+        color: #bbbbbb;
+    }
+
+    .dark .meta-item .meta-value {
+        color: #ffffff;
+    }
+
+    /* File Type Badges untuk Mobile */
+    .dark .file-type-badge.type-code {
+        background: linear-gradient(135deg, #1565c0, #90caf9);
+        color: #e0e0e0;
+    }
+
+    .dark .file-type-badge.type-doc {
+        background: linear-gradient(135deg, #7b1fa2, #ce93d8);
+        color: #e0e0e0;
+    }
+
+    .dark .file-type-badge.type-image {
+        background: linear-gradient(135deg, #2e7d32, #81c784);
+        color: #e0e0e0;
+    }
+
+    .dark .file-type-badge.type-config {
+        background: linear-gradient(135deg, #ef6c00, #ffb74d);
+        color: #e0e0e0;
+    }
+
+    /* Default badge jika tidak ada type spesifik */
+    .dark .file-type-badge {
+        background: linear-gradient(135deg, #424242, #757575);
+        color: #e0e0e0;
+    }
+
+    /* Action Buttons untuk Mobile Cards */
+    .dark .file-card-actions .action-btn {
+        background-color: #3b3b4f;
+        color: #f1f1f1;
+        border: 1px solid #5a5a70;
+    }
+
+    .dark .file-card-actions .action-btn:hover {
+        background-color: #50506a;
+        color: #ff9f4f;
+        border-color: #ff9f4f;
+    }
+
+    /* View Button (first button) */
+    .dark .file-card-actions .action-btn:first-child {
+        background: linear-gradient(135deg, #1565c0, #42a5f5);
+        color: #ffffff;
+        border-color: #1565c0;
+    }
+
+    .dark .file-card-actions .action-btn:first-child:hover {
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        color: #ffffff;
+        border-color: #0d47a1;
+    }
+
+    /* Download Button (second button) */
+    .dark .file-card-actions .action-btn:nth-child(2) {
+        background: linear-gradient(135deg, #2e7d32, #66bb6a);
+        color: #ffffff;
+        border-color: #2e7d32;
+    }
+
+    .dark .file-card-actions .action-btn:nth-child(2):hover {
+        background: linear-gradient(135deg, #1b5e20, #388e3c);
+        color: #ffffff;
+        border-color: #1b5e20;
+    }
+
+    /* Delete Button */
+    .dark .file-card-actions .btn-delete-permanent {
+        background: linear-gradient(135deg, #d32f2f, #f44336) !important;
+        color: #ffffff !important;
+        border-color: #d32f2f !important;
+    }
+
+    .dark .file-card-actions .btn-delete-permanent:hover {
+        background: linear-gradient(135deg, #b71c1c, #d32f2f) !important;
+        color: #ffffff !important;
+        border-color: #b71c1c !important;
+    }
+
+    /* Alternative untuk danger button */
+    .dark .file-card-actions .action-btn.danger {
+        background-color: #5c1a1a;
+        color: #f8d7da;
+        border-color: #721c24;
+    }
+
+    .dark .file-card-actions .action-btn.danger:hover {
+        background-color: #721c24;
+        color: #ffffff;
+        border-color: #8b2635;
+    }
+}
+
+/* Dark Mode untuk elements lain yang mungkin dibutuhkan mobile */
+@media (max-width: 768px) {
+    /* Container dan sections */
+    .dark .container {
+        background-color: #1a1a1a;
+    }
+
+    .dark .repo-header {
+        background-color: #242424;
+        border-color: #3b3b4f;
+    }
+
+    .dark .files-section {
+        background-color: #242424;
+        border-color: #3b3b4f;
+    }
+
+    /* Text elements */
+    .dark .repo-title {
+        color: #ffffff;
+    }
+
+    .dark .section-title {
+        color: #ffffff;
+    }
+
+    .dark .breadcrumb {
+        color: #bbbbbb;
+    }
+
+    .dark .breadcrumb a {
+        color: #ff9f4f;
+    }
+
+    /* Stats dan meta info */
+    .dark .table-stats,
+    .dark .stats-summary {
+        color: #cccccc;
+    }
+
+    .dark .repo-meta .meta-item {
+        color: #cccccc;
+    }
+
+    /* Status badges */
+    .dark .status-public {
+        background: linear-gradient(135deg, #1b4531, #28573f);
+        color: #a0e0a0;
+    }
+
+    .dark .status-private {
+        background: linear-gradient(135deg, #661a1a, #7e2323);
+        color: #ff7f7f;
+    }
+}
+/* === Modal Media Preview - Light Mode (default) === */
+#mediaPreviewModal .modal-content {
+    background-color: white;
+    color: #333;
+    border: 1px solid #e8ecf0;
+}
+
+#mediaPreviewModal .modal-header,
+#mediaPreviewModal .modal-footer {
+    border-color: #e8ecf0;
+}
+
+#mediaPreviewModal .btn-close {
+    /* Bootstrap sudah handle ini, tapi pastikan kontras di light */
+}
+
+/* === Dark Mode untuk Modal === */
+.dark #mediaPreviewModal .modal-content {
+    background-color: #2a2a3d;
+    color: #e0e0e0;
+    border-color: #3b3b4f;
+}
+
+.dark #mediaPreviewModal .modal-header,
+.dark #mediaPreviewModal .modal-footer {
+    border-color: #3b3b4f;
+}
+
+.dark #mediaPreviewModal .modal-title {
+    color: #ffffff;
+}
+
+/* Tombol close di dark mode */
+.dark #mediaPreviewModal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Background modal backdrop (opsional) */
+.dark .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,248 @@
+/* Footer */
+.footer {
+    background: var(--dark-gray);
+    color: white;
+    padding: 50px 0 20px;
+    margin-top: 0;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-orange);
+}
+
+.footer-brand .footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+.footer-link:hover {
+    color: var(--primary-orange);
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-orange);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.social-icons a:hover {
+    background: var(--secondary-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    color: white;
+}
+
+/* Footer Statistics */
+.footer-stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    display: block;
+}
+
+.footer-stat-label {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-top: 0.25rem;
+}
+
+.footer-stat {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    margin-top: 1rem;
+}
+
+.newsletter-form .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1rem;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+    color: white;
+}
+
+.newsletter-form .btn-primary-custom {
+    padding: 0.75rem 1rem;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Copyright */
+.copyright {
+    border-top: 1px solid #4a5568;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #a0aec0;
+}
+
+.copyright p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.copyright .text-danger {
+    color: #ff6b35 !important;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Footer sections spacing */
+.footer .row + .row {
+    margin-top: 2rem;
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+
+    .footer .col-lg-4,
+    .footer .col-lg-2 {
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .newsletter-form {
+        text-align: center;
+    }
+
+    .newsletter-form .input-group {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .copyright .row {
+        text-align: center;
+    }
+
+    .copyright .col-md-6 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-stat {
+        padding: 0.5rem 0;
+    }
+
+    .footer-stat-number {
+        font-size: 1.25rem;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .footer-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-brand .footer-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Footer link hover animation */
+.footer-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--primary-orange);
+    transition: left 0.3s ease;
+}
+
+.footer-link:hover::before {
+    left: 0;
+}
+
+/* Newsletter success state */
+.newsletter-form.success .form-control {
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.newsletter-form.success .btn-primary-custom {
+    background: #28a745;
+}
+
+/* Footer brand description */
+.footer-brand p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Newsletter section styling */
+.footer .row:nth-last-child(2) {
+    padding: 2rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 2rem 0;
+}

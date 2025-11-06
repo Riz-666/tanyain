@@ -1,0 +1,8 @@
+
+.swal-title-small {
+    font-size: 14px; /* ukuran teks */
+}
+
+.swal-icon-small {
+    transform: scale(0.7); /* perkecil icon */
+}

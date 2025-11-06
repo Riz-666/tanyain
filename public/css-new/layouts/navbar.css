@@ -1,0 +1,671 @@
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-orange) !important;
+    text-decoration: none;
+    text-wrap: wrap;
+}
+
+/* Default: tampil gambar, sembunyikan teks */
+.logo-img {
+    display: inline-block;
+}
+.logo-text {
+    display: none;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary-orange) !important;
+}
+
+/* Navigation Links */
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-orange) !important;
+    background: var(--light-orange);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary-orange) !important;
+    background: var(--light-orange);
+}
+
+/* Dropdown Styles */
+.navbar-nav .dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .dropdown-menu.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-nav .dropdown-item {
+    padding: 0.75rem 1.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+.navbar-nav .dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.navbar-nav .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: #e9ecef;
+}
+
+/* Search Form */
+
+:root {
+    --primary-orange: #ff7a1a;
+    --secondary-orange: #ff9b4d;
+}
+
+/* wrapper bikin reference positioning */
+.search-wrapper {
+    position: relative;
+    /* jangan ganggu layout navbar */
+}
+
+/* form overlay yang hidden by default */
+.search-form {
+    position: absolute;
+    right: calc(100% + 0px); /* muncul di kiri tombol, jarak 10px */
+    top: 45%;
+    transform: translateY(-50%) translateX(10px); /* sedikit offset utk animasi masuk */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 6px 20px rgba(9, 30, 66, 0.12);
+    overflow: hidden;
+    max-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-width 320ms cubic-bezier(0.2, 0.9, 0.3, 1),
+        opacity 220ms ease, transform 320ms cubic-bezier(0.2, 0.9, 0.3, 1),
+        padding 220ms ease;
+    white-space: nowrap;
+    z-index: 1050; /* di atas navbar */
+    width: 900px;
+
+}
+
+/* aktif: expand dan slide in */
+.search-wrapper.active .search-form {
+    max-width: 360px; /* ubah sesuai kebutuhan */
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+    padding: 6px 10px;
+}
+
+/* input memenuhi ruang, tanpa merusak border rounding */
+.search-input {
+    border: 0;
+    outline: 0;
+    min-width: 160px;
+    width: 300px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* tombol submit style */
+.search-form .btn-search {
+    background: var(--primary-orange);
+    border: 1px solid var(--primary-orange);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* toggle button visual */
+.toggle-search {
+    background: linear-gradient(
+        135deg,
+        var(--primary-orange),
+        var(--secondary-orange)
+    );
+    border: none;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.toggle-search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    color: white;
+    text-decoration: none;
+}
+/* Default toggle button */
+.search-wrapper .toggle-search {
+    background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    /* Pastikan tidak ada outline yang mengganggu */
+    outline: none;
+}
+
+/* Saat form terbuka (.search-wrapper.active), toggle jadi pudar */
+.search-wrapper.active .toggle-search {
+    opacity: 0.5;
+    /* Opsional: kurangi intensitas gradient */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 107, 53, 0.5),
+        rgba(255, 80, 0, 0.5)
+    );
+    /* Opsional: kurangi shadow atau transform */
+    transform: none;
+    box-shadow: none;
+}
+/* small touch: fokus input outline */
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 122, 26, 0.12);
+    border-radius: 999px;
+}
+
+.navbar .search-input {
+    border: 2px solid #e9ecef;
+    border-right: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 25px 0 0 25px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.navbar .search-input:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: none;
+}
+
+.navbar .btn-search {
+    background: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+    border-left: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0 25px 25px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-search:hover {
+    background: var(--secondary-orange);
+    border-color: var(--secondary-orange);
+    color: white;
+}
+
+/* Mobile Navbar */
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6b35' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        max-height: 70vh;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+        padding: 0.75rem 1rem !important;
+    }
+
+    .navbar-nav .dropdown-menu {
+        background: var(--light-orange);
+        margin: 0.5rem 0;
+        box-shadow: none;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .dropdown-menu.show {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar form {
+        margin: 1rem 0;
+    }
+
+    .navbar .search-input,
+    .navbar .btn-search {
+        border-radius: 8px;
+        border: 2px solid var(--primary-orange);
+    }
+
+    .navbar .search-input {
+        border-bottom: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .navbar .btn-search {
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        width: 100%;
+    }
+
+    /* Auth buttons mobile */
+    .navbar .d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .navbar .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar .dropdown {
+        position: static !important;
+        width: 100%;
+    }
+    .navbar .dropdown-menu {
+        top: auto !important;
+        bottom: 27%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 576.98px) {
+    .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-brand img {
+        display: none;
+    }
+    .logo-text {
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .navbar-collapse {
+        background: white;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        max-height: 70vh;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+        padding: 0.75rem 1rem !important;
+    }
+
+    .navbar-nav .dropdown-menu {
+        background: var(--light-orange);
+        margin: 0.5rem 0;
+        box-shadow: none;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .dropdown-menu.show {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar form {
+        margin: 1rem 0;
+    }
+
+    .navbar .search-input,
+    .navbar .btn-search {
+        border-radius: 8px;
+        border: 2px solid var(--primary-orange);
+    }
+
+    .navbar .search-input {
+        border-bottom: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .navbar .btn-search {
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        width: 100%;
+    }
+
+    /* Auth buttons mobile */
+    .navbar .d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .navbar .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar .dropdown {
+        position: static !important;
+        width: 100%;
+    }
+    .navbar .dropdown-menu {
+        top: auto !important;
+        bottom: 27%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Dropdown Toggle Arrow */
+.navbar-nav .dropdown-toggle::after {
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    margin-left: 0.5rem;
+}
+
+/* User Dropdown (when logged in) */
+.navbar .dropdown-menu-end {
+    right: 0;
+    left: auto;
+    width: 100%;
+}
+
+.navbar .profile-dropdown .dropdown-item {
+    border-radius: 30px;
+}
+
+.navbar .profile-dropdown .dropdown-item:hover {
+    background-color: rgb(255, 222, 212);
+}
+
+.navbar .profile-dropdown a:active {
+    background-color: orange;
+}
+
+/* User Dropdown (when logged in) */
+.navbar .notif-dropdown {
+    right: 0;
+    left: auto;
+    min-width: 600px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.navbar .notif-dropdown .dropdown-item {
+    border-radius: 30px;
+}
+
+.navbar .notif-dropdown .dropdown-item:hover {
+    background-color: rgb(255, 222, 212);
+}
+
+.navbar .notif-dropdown a:active {
+    background-color: orange;
+}
+
+.navbar .notif-dropdown .baca-semua .btn {
+    background-color: var(--primary-orange);
+    border: none;
+    border-radius: 20px;
+}
+
+.navbar .notif-dropdown .baca-semua .btn:hover {
+    background-color: #8d3b1d;
+    border: none;
+    cursor: pointer;
+}
+/* Responsive Search */
+@media (max-width: 768px) {
+    .navbar form {
+        width: 100%;
+    }
+
+    .navbar .input-group {
+        width: 100%;
+    }
+    .navbar-nav .dropdown {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-nav .dropdown-menu {
+        position: static !important; /* ikut flow parent */
+        float: none;
+        width: 100%;
+        margin: 0;
+        padding: 0.25rem 1rem; /* kasih sedikit spasi */
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Biar dropdown item keliatan nested */
+    .navbar-nav .dropdown-item {
+        padding-left: 2rem; /* jarak dari kiri */
+    }
+
+    /* Tambahin garis tipis biar rapi */
+    .navbar-nav .dropdown-menu .dropdown-item {
+        border-bottom: 1px solid #eee;
+    }
+    .navbar-nav .dropdown-menu .dropdown-item:last-child {
+        border-bottom: none;
+    }
+    /* User Dropdown (when logged in) */
+    .navbar .notif-dropdown {
+        right: 0;
+        left: auto;
+        min-width: 100%;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+}
+
+/* Animation for mobile menu */
+.navbar-collapse.collapsing {
+    transition: height 0.3s ease;
+}
+
+.navbar-collapse.show {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar brand icon animation */
+.navbar-brand i {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    transform: rotate(360deg);
+}
+
+/* Active dropdown state */
+.navbar-nav .nav-item.dropdown.show > .nav-link {
+    color: var(--primary-orange) !important;
+    background: var(--light-orange);
+}
+
+/* Search form focus state */
+.navbar form:focus-within .search-input {
+    border-color: var(--primary-orange);
+}
+
+.navbar form:focus-within .btn-search {
+    border-color: var(--primary-orange);
+}
+.navbar .btn-primary-custom .fas.fa-bell {
+    font-size: 25px;
+    line-height: 1;
+    vertical-align: middle;
+}
+/* === NOTIFIKASI DROPDOWN === */
+.notif-dropdown {
+    min-width: 320px;
+    max-width: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.25s ease-out;
+}
+
+.notif-dropdown .dropdown-header {
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.notif-dropdown .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.notif-dropdown .dropdown-item:hover {
+    background-color: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+.notif-dropdown .dropdown-item.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.notif-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+.notif-dropdown::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 6px;
+}
+
+/* === PROFIL DROPDOWN === */
+.profile-dropdown {
+    min-width: 230px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.25s ease-out;
+}
+
+.profile-dropdown .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+/* === ANIMASI DROPDOWN === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

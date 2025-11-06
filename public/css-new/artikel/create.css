@@ -1,0 +1,399 @@
+:root {
+    --primary-orange: #ff6b35;
+    --secondary-orange: #ff8c42;
+    --light-orange: #fff2ee;
+    --dark-gray: #2c3e50;
+    --light-gray: #f8f9fa;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+}
+
+body {
+    background: linear-gradient(
+        135deg,
+        var(--light-orange) 0%,
+        var(--light-gray) 100%
+    );
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.container-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 60px;
+}
+
+.form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-orange),
+        var(--secondary-orange)
+    );
+}
+
+.form-title {
+    color: var(--dark-gray);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-subtitle {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--light-orange);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-orange);
+}
+
+.section-title {
+    color: var(--dark-gray);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-label {
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+    background: white;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--primary-orange),
+        var(--secondary-orange)
+    );
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-orange),
+        var(--primary-orange)
+    );
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.cover-preview {
+    border: 3px dashed var(--primary-orange);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    background: var(--light-orange);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cover-preview:hover {
+    border-color: var(--secondary-orange);
+    background: #fff;
+}
+
+.cover-preview.has-image {
+    border-style: solid;
+    border-color: var(--primary-orange);
+    padding: 1rem;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-subtext {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.editor-container {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.editor-container:focus-within {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+}
+
+.ql-toolbar {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ql-container {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    min-height: 300px;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    min-height: 50px;
+    padding: 0.5rem 0;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--focus
+    .select2-selection--multiple {
+    border-color: var(--primary-orange);
+}
+
+.file-upload-area {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.file-upload-area:hover {
+    border-color: var(--primary-orange);
+    background: var(--light-orange);
+}
+
+.file-list {
+    margin-top: 1rem;
+}
+
+.file-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive untuk Galaxy Z Fold 5 */
+@media (max-width: 768px) {
+    .container-main {
+        padding: 1rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .cover-preview {
+        padding: 2rem 1rem;
+    }
+
+    .row > .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Untuk Galaxy Z Fold 5 dalam mode terbuka */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-main {
+        padding: 1.5rem;
+    }
+
+    .form-card {
+        padding: 2rem;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.auto-save-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-orange);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    z-index: 1000;
+}
+.ql-syntax {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+
+/* Buat editor lebih mirip Word */
+#articleEditor .ql-editor {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    padding: 20px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    color: #333 !important;
+    background-color: #fff !important;
+}
+
+/* Full width container */
+.editor-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Toolbar agar lebih mirip Word */
+#articleEditor .ql-toolbar {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f8f9fa;
+    padding: 8px;
+}
+
+#articleEditor .ql-container {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.ql-size-small {
+    font-size: 0.75em !important;
+}
+.ql-size-large {
+    font-size: 1.5em !important;
+}
+.ql-size-huge {
+    font-size: 2.5em !important;
+}
+#articleEditor .ql-editor img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,504 @@
+.page-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Profile Card */
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #facc15, #f97316);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.profile-avatar img {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.profile-role {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+    color: black;
+}
+
+/* Form Section */
+.profile-form {
+    padding: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding: 5px 40px 40px 40px;
+}
+
+.section-title {
+    color: #374151;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    border-bottom: 2px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-icon {
+    color: var(--primary-orange);
+    font-size: 1rem;
+}
+
+.form-label {
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #ffffff;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    margin-top: 0.75rem;
+}
+
+.strength-bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.strength-fill {
+    height: 100%;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.strength-weak {
+    background: #ef4444;
+    width: 25%;
+}
+.strength-fair {
+    background: #f59e0b;
+    width: 50%;
+}
+.strength-good {
+    background: #10b981;
+    width: 75%;
+}
+.strength-strong {
+    background: #059669;
+    width: 100%;
+}
+
+.strength-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.text-weak {
+    color: #ef4444;
+}
+.text-fair {
+    color: #f59e0b;
+}
+.text-good {
+    color: #10b981;
+}
+.text-strong {
+    color: #059669;
+}
+
+/* Password Requirements */
+.password-requirements {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-orange);
+}
+
+.requirement {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+}
+
+.requirement.met {
+    color: #059669;
+}
+
+.requirement-icon {
+    font-size: 0.8rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: orange;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #00ff2a, #1c6400);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #f4a735, #f45a23);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Input Groups */
+.input-group-text {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-right: none;
+    color: var(--primary-orange);
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--primary-orange);
+    background: rgba(249, 115, 22, 0.05);
+}
+
+/* Alert Messages */
+.alert-custom {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    color: #166534;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+    color: #92400e;
+}
+
+/* Last Login Info */
+.last-login {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary-orange);
+}
+
+.last-login-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.last-login-text {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .page-header {
+        padding: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .profile-form {
+        padding: 1.5rem;
+    }
+
+    .profile-header {
+        padding: 1.5rem;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* Galaxy Z Fold 5 Specific */
+@media (max-width: 374px) and (min-height: 800px) {
+    .profile-form {
+        padding: 1rem;
+    }
+
+    .page-header {
+        padding: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .form-control {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+.form-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Dark Mode Override */
+/* Profile Card */
+body.dark-mode .profile-card {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .profile-name,
+body.dark-mode .profile-role {
+    color: #f3f4f6;
+}
+
+/* Form Sections */
+body.dark-mode .form-section {
+    background: #242424;
+}
+
+body.dark-mode .form-label {
+    color: #e5e7eb;
+}
+
+body.dark-mode .form-control {
+    background-color: #242424;
+    border-color: #4b5563;
+    color: #f3f4f6;
+}
+
+body.dark-mode .form-control:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+    background-color: #374151;
+}
+
+/* Input Groups */
+body.dark-mode .input-group-text {
+    background-color: #4b5563;
+    border-color: #4b5563;
+    color: #f97316;
+}
+
+body.dark-mode .input-group:focus-within .input-group-text {
+    background-color: rgba(249, 115, 22, 0.1);
+    border-color: #f97316;
+}
+
+/* Buttons */
+body.dark-mode .btn-primary {
+    background: #f97316;
+    color: #f9fafb;
+}
+
+body.dark-mode .btn-primary:hover {
+    background: linear-gradient(135deg, #facc15, #f97316);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #374151;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: linear-gradient(135deg, #4b5563, #6b7280);
+    color: #f3f4f6;
+}
+
+/* Alerts */
+body.dark-mode .alert-success {
+    background: linear-gradient(135deg, #166534 0%, #047857 100%);
+    color: #d1fae5;
+}
+
+body.dark-mode .alert-warning {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    color: #fef3c7;
+}
+
+/* Password Strength */
+body.dark-mode .strength-bar {
+    background: #4b5563;
+}
+
+body.dark-mode .strength-fill.strength-weak {
+    background: #f87171;
+}
+body.dark-mode .strength-fill.strength-fair {
+    background: #fbbf24;
+}
+body.dark-mode .strength-fill.strength-good {
+    background: #34d399;
+}
+body.dark-mode .strength-fill.strength-strong {
+    background: #059669;
+}
+
+body.dark-mode .strength-text {
+    color: #f3f4f6;
+}
+
+/* Password Requirements */
+body.dark-mode .password-requirements {
+    background: #1f2937;
+    border-left-color: #f97316;
+    color: #d1d5db;
+}
+
+body.dark-mode .requirement.met {
+    color: #34d399;
+}
+
+
+/* General Text Override */
+body.dark-mode,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode label,
+body.dark-mode small,
+body.dark-mode .form-label,
+body.dark-mode .strength-text,
+body.dark-mode .last-login-text {
+    color: #f3f4f6 !important; /* putih terang */
+}
+
+/* Inputs placeholder text */
+body.dark-mode ::placeholder {
+    color: #d1d5db !important; /* abu terang */
+}
+
+/* Links */
+body.dark-mode a {
+    color: #fbbf24 !important; /* kuning terang */
+}
+
+/* Icons */
+body.dark-mode i {
+    color: #f3f4f6 !important;
+}
+
+body.dark-mode .text-muted p{
+    color: white;
+}

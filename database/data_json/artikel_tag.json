@@ -1,0 +1,26 @@
+[
+  { "id": 1, "artikel_id": 1, "tag_id": 1 },
+  { "id": 2, "artikel_id": 1, "tag_id": 3 },
+  { "id": 3, "artikel_id": 2, "tag_id": 6 },
+  { "id": 4, "artikel_id": 2, "tag_id": 13 },
+  { "id": 5, "artikel_id": 3, "tag_id": 2 },
+  { "id": 6, "artikel_id": 3, "tag_id": 19 },
+  { "id": 7, "artikel_id": 4, "tag_id": 5 },
+  { "id": 8, "artikel_id": 4, "tag_id": 4 },
+  { "id": 9, "artikel_id": 5, "tag_id": 10 },
+  { "id": 10, "artikel_id": 5, "tag_id": 18 },
+  { "id": 11, "artikel_id": 5, "tag_id": 20 },
+  { "id": 12, "artikel_id": 6, "tag_id": 22 },
+  { "id": 13, "artikel_id": 6, "tag_id": 25 },
+  { "id": 14, "artikel_id": 7, "tag_id": 31 },
+  { "id": 15, "artikel_id": 7, "tag_id": 5 },
+  { "id": 16, "artikel_id": 8, "tag_id": 14 },
+  { "id": 17, "artikel_id": 8, "tag_id": 44 },
+  { "id": 18, "artikel_id": 8, "tag_id": 46 },
+  { "id": 19, "artikel_id": 9, "tag_id": 38 },
+  { "id": 20, "artikel_id": 9, "tag_id": 47 },
+  { "id": 21, "artikel_id": 10, "tag_id": 37 },
+  { "id": 22, "artikel_id": 10, "tag_id": 39 },
+  { "id": 23, "artikel_id": 10, "tag_id": 40 }
+]
+

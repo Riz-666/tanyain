@@ -1,0 +1,172 @@
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-profile {
+            display: flex;
+            text-align: center;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+
+        .user-info h6 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .user-info small {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* Professional dropdown menu styling */
+        .dropdown-menu {
+            min-width: 220px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 8px 0;
+            margin-top: 8px;
+            background: #ffffff;
+            backdrop-filter: blur(10px);
+            animation: dropdownFadeIn 0.2s ease-out;
+        }
+
+        @keyframes dropdownFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dark mode dropdown */
+        .dropdown.bg-dark .dropdown-menu {
+            border-color: white;
+            background: linear-gradient(135deg, #242424, #414141) !important;;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Dropdown items */
+        .dropdown-item {
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .dropdown-item:active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+        }
+
+        /* Dark mode dropdown items */
+        .dropdown.bg-dark .dropdown-item {
+            color: #ecf0f1;
+        }
+
+        .dropdown.bg-dark .dropdown-item:hover {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #ffffff;
+        }
+
+        /* Icons styling */
+        .dropdown-item i {
+            width: 18px;
+            text-align: center;
+            margin-right: 12px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Special styling for logout */
+        .dropdown-item:last-child {
+            color: #f48223;
+            margin-top: 4px;
+        }
+
+        .dropdown-item:last-child:hover {
+            background: #f48223;
+            color: #ffffff;
+        }
+
+        .dropdown.bg-dark .dropdown-item:last-child {
+            color: white;
+        }
+
+        .dropdown.bg-dark .dropdown-item:last-child:hover {
+            background: linear-gradient(135deg, orange 0%, orange 100%);
+            color: #000000;
+        }
+
+        /* Divider styling */
+        .dropdown-divider {
+            margin: 8px 16px;
+            border-top: 1px solid #e9ecef;
+            opacity: 1;
+        }
+
+        .dropdown.bg-dark .dropdown-divider {
+            border-top-color: #4a5568;
+        }
+
+        /* Hover effect for dropdown toggle */
+        .user-profile:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Demo container */
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-section {
+            margin: 40px 0;
+        }
+
+        .mode-toggle {
+            margin: 20px 0;
+        }
+
+        .btn-toggle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+        }

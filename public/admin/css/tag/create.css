@@ -1,0 +1,346 @@
+
+.form-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #f1f5f9;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+
+.page-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.form-label {
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.btn-primary {
+    background: orange;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--dark-orange) 0%, #c2410c 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+
+.form-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--primary-orange);
+    font-size: 1.1rem;
+}
+
+.input-group-custom {
+    position: relative;
+}
+
+.input-with-icon {
+    padding-left: 3rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.feature-badge {
+    display: inline-block;
+    background: var(--light-orange);
+    color: var(--dark-orange);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.help-text {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Galaxy Z Fold 5 Specific */
+@media (max-width: 374px) and (min-height: 800px) {
+    .form-container {
+        padding: 1.25rem;
+        margin: 0 0.5rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Unfolded tablet mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-container {
+        max-width: 700px;
+        padding: 3rem;
+    }
+}
+
+/* Animation */
+.form-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-control:hover {
+    border-color: #cbd5e1;
+}
+
+.success-message {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    color: #166534;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #bbf7d0;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #00ff00, #015001);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #ff9900, #a36200);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #f4a735, #f45a23);
+}
+
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #ff0000, #960000);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #001aff, #00195f);
+}
+
+/* Dark Mode */
+
+/* Container */
+
+body.dark-mode .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4) !important;
+    background: linear-gradient(135deg, #00ff00, #015001) !important;
+}
+
+body.dark-mode .btn-warning:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4) !important;
+    background: linear-gradient(135deg, #ff9900, #a36200)!important;
+}
+
+body.dark-mode .btn-secondary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4) !important;
+    background: linear-gradient(135deg, #f4a735, #f45a23)!important;
+}
+
+
+body.dark-mode .btn-danger:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4) !important;
+    background: linear-gradient(135deg, #ff0000, #960000)!important;
+}
+
+body.dark-mode .btn-success:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4) !important;
+    background: linear-gradient(135deg, #001aff, #00195f)!important;
+}
+
+body.dark-mode .form-container {
+    background: #1e293b; /* slate-800 */
+    border-color: #334155; /* slate-700 */
+    color: #e2e8f0;
+}
+
+
+body.dark-mode .page-subtitle {
+    color: #cbd5e1; /* slate-300 */
+}
+
+/* Label */
+body.dark-mode .form-label {
+    color: #f1f5f9;
+}
+
+/* Input */
+body.dark-mode .form-control {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+
+body.dark-mode .form-control:focus {
+    border-color: var(--primary-orange);
+    background-color: #1e293b;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #94a3b8;
+}
+
+/* Buttons */
+body.dark-mode .btn-primary {
+    background: orange;
+    color: #fff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background: linear-gradient(135deg, var(--dark-orange) 0%, #c2410c 100%);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #334155;
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+/* Badge & help text */
+body.dark-mode .feature-badge {
+    background: rgba(249, 115, 22, 0.2);
+    color: var(--primary-orange);
+}
+
+body.dark-mode .help-text {
+    color: #94a3b8;
+}
+
+/* Success message */
+body.dark-mode .success-message {
+    background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+    color: #f0fdf4;
+    border-color: #22c55e;
+}
+
+.dark-mode small {
+    color: white !important;
+}

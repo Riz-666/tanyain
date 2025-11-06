@@ -1,0 +1,459 @@
+.content {
+    padding: 30px;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.table-controls .btn,
+.action-buttons .btn {
+    background: #f48223;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #00ff00, #015001);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #ff9900, #a36200);
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #f4a735, #f45a23);
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #ff0000, #960000);
+}
+
+.btn-success {
+    background: #28a745;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 130, 35, 0.4);
+    background: linear-gradient(135deg, #001aff, #00195f);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Custom DataTables Styling */
+.dataTables_filter {
+    margin-bottom: 15px; /* atur sesuai kebutuhan */
+}
+
+/* Biar search input lebih rapi */
+.dataTables_filter input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+    border: 2px solid #f48223;
+    border-radius: 6px;
+    padding: 8px 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.dataTables_filter input:focus,
+.dataTables_length select:focus {
+    border-color: #e67b1a;
+    box-shadow: 0 0 0 3px rgba(244, 130, 35, 0.1);
+}
+
+table.dataTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+table.dataTable thead th {
+    background: linear-gradient(135deg, #f48223 0%, #e67b1a 100%);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+
+table.dataTable thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table.dataTable thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table.dataTable tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+table.dataTable tbody tr:hover {
+    background: rgba(244, 130, 35, 0.05);
+    transform: scale(1.01);
+}
+
+table.dataTable tbody td {
+    padding: 15px;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-inactive {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f48223;
+}
+
+.user-table {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.user-details h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-details span {
+    font-size: 12px;
+    color: #666;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.dataTables_info {
+    color: #666;
+    font-weight: 500;
+}
+
+.dataTables_paginate .paginate_button {
+    padding: 8px 12px !important;
+    margin: 0 2px !important;
+    border-radius: 6px !important;
+    border: 2px solid #f48223 !important;
+    background: white !important;
+    color: #f48223 !important;
+    transition: all 0.3s ease !important;
+}
+
+.dataTables_paginate .paginate_button:hover,
+.dataTables_paginate .paginate_button.current {
+    background: #f48223 !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+.dataTables_paginate .paginate_button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-sm {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+/* Responsive tambahan untuk HP kecil (misalnya Galaxy Z Fold 5 folded, iPhone, dsb) */
+@media (max-width: 480px) {
+    .content {
+        padding: 15px;
+    }
+
+    .table-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-controls .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    table.dataTable thead {
+        display: none; /* Hilangin header biar ga kepotong di layar kecil */
+    }
+
+    table.dataTable tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table.dataTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 5px;
+        text-align: left;
+    }
+
+    .action-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .btn-sm {
+        flex: 1 1 45%;
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .user-table {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-details h4 {
+        font-size: 13px;
+    }
+
+    .user-details span {
+        font-size: 11px;
+    }
+}
+/* Responsive tambahan untuk HP kecil (misalnya Galaxy Z Fold 5 folded, iPhone, dsb) */
+@media (max-width: 475px) {
+    .content {
+        padding: 15px;
+    }
+
+    .table-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-controls .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    table.dataTable thead {
+        display: none;
+    }
+
+    table.dataTable tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table.dataTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 5px;
+        text-align: left;
+    }
+
+    .action-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .btn-sm {
+        flex: 1 1 45%;
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .user-table {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-details h4 {
+        font-size: 13px;
+    }
+
+    .user-details span {
+        font-size: 11px;
+    }
+}
+/* Head tabel selalu orange */
+table.dataTable thead th {
+    background-color: #f97316 !important; /* orange-500 */
+    color: white !important;
+    text-align: center;
+}
+
+/* Biar border tabel tetap clean */
+table.dataTable {
+    border-spacing: 0;
+    border: none;
+}
+/* Mode Light */
+.table-light table.dataTable tbody td {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+}
+.table-light table.dataTable tbody tr:hover td {
+    background-color: #f3f4f6 !important;
+}
+
+/* Mode Dark */
+.table-dark table.dataTable tbody td,
+.table-dark h4 {
+    background-color: #363636 !important;
+    color: #f9fafb !important;
+}
+/* Label teks filter & length */
+.table-dark .dataTables_filter label,
+.table-dark .dataTables_length label,
+.table-dark .dataTables_info {
+    background-color: #1a1a1a !important; /* bg dark */
+    color: #f9fafb !important; /* teks putih */
+}
+
+/* Input search di dark mode */
+.table-dark .dataTables_filter input {
+    background-color: #363636 !important; /* gray-700 */
+    color: #f9fafb !important; /* teks putih */
+    border: 1px solid #4b5563 !important; /* gray-600 */
+    border-radius: 0.375rem; /* rounded-md */
+}
+
+/* Dropdown length select di dark mode */
+.table-dark .dataTables_length select {
+    background-color: #374151 !important;
+    color: #f9fafb !important;
+    border: 1px solid #4b5563 !important;
+    border-radius: 0.375rem;
+}
+.table-dark .user-table .user-details h4 {
+    background-color: transparent;
+}
+
+.table-dark table.dataTable tbody tr:hover td {
+    background-color: #313131 !important;
+}

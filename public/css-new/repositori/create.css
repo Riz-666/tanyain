@@ -1,0 +1,451 @@
+:root {
+    --primary-orange: #ff6b35;
+    --secondary-orange: #ff8c42;
+    --light-orange: #fff2ee;
+    --dark-gray: #2c3e50;
+    --light-gray: #f8f9fa;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+}
+
+.container-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 70px;
+}
+
+.form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-orange),
+        var(--secondary-orange)
+    );
+}
+
+.form-title {
+    color: var(--dark-gray);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-subtitle {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--light-orange);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-orange);
+}
+
+.section-title {
+    color: var(--dark-gray);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-label {
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+    background: white;
+}
+
+.form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--primary-orange),
+        var(--secondary-orange)
+    );
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-orange),
+        var(--primary-orange)
+    );
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.25);
+}
+
+.file-upload-area {
+    border: 3px dashed var(--primary-orange);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    background: var(--light-orange);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.file-upload-area:hover {
+    border-color: var(--secondary-orange);
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+}
+
+.upload-icon {
+    font-size: 3.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.upload-text {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.upload-subtext {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.supported-formats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.format-badge {
+    background: white;
+    color: var(--primary-orange);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-orange);
+}
+
+.file-list {
+    margin-top: 1.5rem;
+}
+
+.file-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.file-item:hover {
+    border-color: var(--primary-orange);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.1);
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-grow: 1;
+}
+
+.file-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--light-orange);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+}
+
+.file-details {
+    flex-grow: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.file-size {
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.btn-remove {
+    background: #ef4444;
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.status-public {
+    background: #10b981;
+    color: white;
+}
+
+.status-private {
+    background: #6b7280;
+    color: white;
+}
+
+.form-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.repo-preview {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+.repo-preview.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.preview-title {
+    color: var(--dark-gray);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-content h5 {
+    color: var(--primary-orange);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.preview-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive untuk Galaxy Z Fold 5 */
+@media (max-width: 768px) {
+    .container-main {
+        padding: 1rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .file-upload-area {
+        padding: 2rem 1rem;
+    }
+
+    .upload-icon {
+        font-size: 2.5rem;
+    }
+
+    .supported-formats {
+        gap: 0.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .file-item {
+        padding: 0.75rem;
+    }
+
+    .file-info {
+        gap: 0.5rem;
+    }
+}
+
+/* Untuk Galaxy Z Fold 5 dalam mode terbuka */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-main {
+        padding: 1.5rem;
+    }
+
+    .form-card {
+        padding: 2rem;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+.ql-toolbar.ql-snow {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  padding: 8px;
+  background-color: white;
+}
