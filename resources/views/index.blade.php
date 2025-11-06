@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Manajemen Pengetahuan SPBE ')
+@section('title', 'TanyaIn – Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/index.css') }}">

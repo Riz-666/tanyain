@@ -5,12 +5,13 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="footer-brand">
                     <h3 class="footer-title">
-                        <i class="fas fa-question-circle me-2"></i>Manajemen Pengetahuan SPBE  Kota Bogor
+                        <i class="fas fa-question-circle me-2"></i>TanyaIn Knowledge Hub
                     </h3>
                     <p style="color: #cbd5e0; line-height: 1.6;">
-                        Pusat Berbagi Pengetahuan SPBE Kota Bogor.
-                        Layanan data terbuka berbasis elektronik memberikan layanan data Pemerintah Daerah tanpa biaya, mudah, cepat, tepat dan akurat.
+                        Platform kolaboratif untuk berbagi artikel, ide, dan repositori ilmu. Satu tempat untuk belajar
+                        dan tumbuh bersama komunitas digital Indonesia.
                     </p>
+
                     <div class="social-icons mt-3">
                         <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -83,7 +84,7 @@
         <div class="copyright">
             <div class="row align-items-center">
                 <div class="col-md-6 text-md-start">
-                    <p>&copy; MP - SPBE Kota Bogor.</p>
+                    <p>&copy; TanyaIn - Platform Berbagi Pengetahuan.</p>
                 </div>
             </div>
         </div>

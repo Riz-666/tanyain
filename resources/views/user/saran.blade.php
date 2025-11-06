@@ -1,287 +1,158 @@
 @extends('layouts.app')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css-new/saran.css') }}">4
+    <link rel="stylesheet" href="{{ asset('css-new/saran.css') }}">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
 @endsection
-@section('title', 'Tentang - Manajemen Pengetahuan SPBE Kota Bogor')
+
+@section('title', 'Tentang - Platform Berbagi Pengetahuan dan Repositori Ilmu')
+
 @section('content')
-    <div class="container mt-6 body-saran" style="margin-top: -20px">
-        <!-- Tentang Website -->
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-info-circle"></i>
-                Tentang Manajemen Pengetahuan SPBE Kota Bogor
-            </h2>
-            <div class="about-content">
-                <p><strong>Manajemen Pengetahuan SPBE</strong> merupakan platform yang mendukung pelaksanaan
-                    MP-SPBE Kota Bogor.
-                    Melalui platform ini, seluruh perangkat daerah dapat mengakses artikel, dokumen, dan repositori secara
-                    cepat,
-                    sehingga mendukung kolaborasi, transfer pengetahuan, serta peningkatan kapasitas dalam implementasi
-                    SPBE.
-                    Tujuannya adalah memastikan setiap pihak memiliki akses mudah terhadap informasi yang relevan dan
-                    mutakhir untuk menunjang kinerja pemerintahan.
+<div class="container mt-6 body-saran" style="margin-top: -20px">
 
+    <!-- Tentang TanyaIn -->
+    <section class="section">
+        <h2 class="section-title">
+            <i class="fas fa-info-circle"></i>
+            Tentang TanyaIn
+        </h2>
+        <div class="about-content">
+            <p><strong>TanyaIn</strong> adalah platform berbagi pengetahuan dan repositori digital yang dirancang untuk
+                mempermudah akses informasi, mempercepat proses belajar, dan mendorong kolaborasi antar pengguna.
+                Melalui TanyaIn, siapa pun dapat menemukan artikel, berbagi dokumen, dan berkontribusi dalam membangun ekosistem
+                pengetahuan yang terbuka dan bermanfaat bagi semua.
+            </p>
 
-                <h3><i class="fas fa-rocket"></i> Misi</h3>
-                <ol>
-                    <li>Mewujudkan tata kelola pemerintahan berbasis digital yang terpadu, efektif, dan efisien.</li>
-                    <li>Meningkatkan kualitas pelayanan publik melalui pemanfaatan teknologi informasi dan komunikasi.</li>
-                    <li>Meningkatkan transparansi, akuntabilitas, dan integritas dalam penyelenggaraan pemerintahan.</li>
-                    <li>Mendorong kolaborasi dan integrasi data lintas perangkat daerah untuk mendukung pengambilan
-                        keputusan.</li>
-                    <li>Meningkatkan literasi dan budaya digital aparatur serta masyarakat.</li>
-                    <li>Mengoptimalkan pemanfaatan infrastruktur SPBE guna mendukung pelayanan prima.</li>
-                </ol>
+            <h3><i class="fas fa-rocket"></i> Misi</h3>
+            <ol>
+                <li>Mendorong kolaborasi berbasis pengetahuan antar individu dan komunitas.</li>
+                <li>Meningkatkan akses terhadap artikel, repositori, dan referensi ilmiah secara terbuka.</li>
+                <li>Menyediakan wadah bagi pengguna untuk berbagi ide, riset, dan hasil karya digital.</li>
+                <li>Mengembangkan budaya belajar bersama secara daring yang inklusif dan berkelanjutan.</li>
+                <li>Mendukung pertumbuhan inovasi dan literasi digital di Indonesia.</li>
+            </ol>
 
-                <h3><i class="fas fa-eye"></i> Visi</h3>
-                <p>Terwujudnya Tata Kelola Pemerintahan Kota Bogor yang Terintegrasi, Transparan, dan Inovatif melalui
-                    Implementasi SPBE.</p>
+            <h3><i class="fas fa-eye"></i> Visi</h3>
+            <p>Mewujudkan pusat pengetahuan digital yang terbuka, kolaboratif, dan terpercaya untuk mendukung kemajuan pendidikan dan inovasi di Indonesia.</p>
 
-
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-newspaper"></i>
-                        <h4>Artikel Berkualitas</h4>
-                        <p>Kumpulan informasi dan panduan praktis untuk mendukung implementasi MP-SPBE Kota Bogor.</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fas fa-folder-open"></i>
-                        <h4>Repositori Lengkap</h4>
-                        <p>Akses berbagai repositori, dokumen, dan kode sumber yang relevan untuk mendukung penerapan SPBE.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Pencarian Pintar</h4>
-                        <p>Temukan artikel, dokumen, dan repositori dengan cepat untuk mempercepat kolaborasi dan
-                            pengambilan keputusan.</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>Penguatan Kapasitas</h4>
-                        <p>Akses materi pembelajaran untuk meningkatkan pengetahuan dan kompetensi dalam implementasi SPBE.
-                        </p>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>Artikel Informatif</h4>
+                    <p>Kumpulan tulisan dan wawasan dari berbagai bidang pengetahuan untuk memperluas perspektif pembaca.</p>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Kontak Administrator -->
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-book-bookmark"></i>
-                Kontak Dan Bantuan
-            </h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4><i class="fas fa-book-open"></i> Panduan Dan Peraturan</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-question-circle"></i>
-                        <a href="{{ Route('bantuan') }}">Bantuan Pengguna</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-file-alt"></i>
-                        <a href="{{ Route('ketentuan') }}">Ketentuan Pengguna</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-shield-alt"></i>
-                        <a href="{{ Route('privasi') }}">Kebijakan Privasi</a>
-                    </div>
+                <div class="feature-item">
+                    <i class="fas fa-folder-open"></i>
+                    <h4>Repositori Terbuka</h4>
+                    <p>Akses beragam dokumen, file, dan referensi yang dapat digunakan untuk belajar dan berbagi informasi.</p>
                 </div>
 
-
-                <div class="contact-card">
-                    <h4><i class="fas fa-building"></i> Instansi Pengelola</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-university"></i> Dinas Komunikasi dan Informatika Kota Bogor (Diskominfo)
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i> Komplek Balaikota Bogor, Jl. Ir. H. Juanda No. 10, Bogor, Jawa
-                        Barat, Indonesia
-                    </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Pencarian Pintar</h4>
+                    <p>Temukan artikel dan repositori relevan dengan cepat menggunakan sistem pencarian cerdas.</p>
                 </div>
 
-
-                <div class="contact-card">
-                    <h4><i class="fas fa-life-ring"></i> Bantuan & Support</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i> <a href="mailto:kominfo@kotabogor.go.id">kominfo@kotabogor.go.id</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i> <a href="tel:+622518321075">+62 251 8321075 Ext. 287</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-globe"></i> <a href="https://kominfo.kotabogor.go.id"
-                            target="_blank">www.kominfo.kotabogor.go.id</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i> Jam Kerja: Senin-Jumat, 08:00-16:00 WIB
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-sitemap"></i>
-                Struktur Organisasi Diskominfo Kota Bogor
-            </h2>
-
-            <div class="org-chart-wrapper">
-                <div class="org-chart">
-
-                    <!-- Level 1 - Kepala Dinas -->
-                    <div class="org-level">
-                        <div class="org-card" data-nama="Rudiyana, S.STP., M.Sc"
-                            data-jabatan="Kepala Dinas Komunikasi Dan Informatika Kota Bogor"
-                            data-foto="{{ asset('organisasi/1.jpg') }}">
-                            <i class="fas fa-user-tie"></i>
-                            <div class="org-name">Kepala Dinas Komunikasi Dan Informatika Kota Bogor</div>
-                            <div class="org-person">Rudiyana, S.STP., M.Sc</div>
-                        </div>
-                    </div>
-
-                    <!-- Level 2 - Sekretaris & Kabid -->
-                    <div class="org-level level-two">
-                        <!-- Sekretaris Dinas -->
-                        <div class="org-card" data-nama="Oki Tri Fasiasta Nurmala Alam, S.STP."
-                            data-jabatan="Sekretaris Dinas Komunikasi Dan Informatika Kota Bogor"
-                            data-foto="{{ asset('organisasi/2.jpg') }}">
-                            <i class="fas fa-user-cog"></i>
-                            <div class="org-name">Sekretaris Dinas Komunikasi Dan Informatika Kota Bogor</div>
-                            <div class="org-person">Oki Tri Fasiasta Nurmala Alam, S.STP.</div>
-                        </div>
-
-                        <!-- Kabid Statistik Sektoral -->
-                        <div class="org-card" data-nama="Tosan Wiar Ramadhani, S.Kom., M.TI"
-                            data-jabatan="Kabid Statistik Sektoral" data-foto="{{ asset('organisasi/6.jpg') }}">
-                            <i class="fas fa-chart-bar"></i>
-                            <div class="org-name">Kabid Statistik Sektoral</div>
-                            <div class="org-person">Tosan Wiar Ramadhani, S.Kom., M.TI</div>
-                        </div>
-
-                        <!-- Kabid Informasi & Komunikasi Publik -->
-                        <div class="org-card" data-nama="Dian Intannia Lesmana S.Sos. ME"
-                            data-jabatan="Kabid Informasi Dan Komunikasi Publik"
-                            data-foto="{{ asset('organisasi/4.jpg') }}">
-                            <i class="fas fa-bullhorn"></i>
-                            <div class="org-name">Kabid Informasi Dan Komunikasi Publik</div>
-                            <div class="org-person">Dian Intannia Lesmana S.Sos. ME</div>
-                        </div>
-
-                        <!-- Kabid Persandian & Keamanan Informasi -->
-                        <div class="org-card" data-nama="Arofa Abdilla Rahman ST MT"
-                            data-jabatan="Kabid Persandian & Keamanan Informasi"
-                            data-foto="{{ asset('organisasi/5.jpg') }}">
-                            <i class="fas fa-lock"></i>
-                            <div class="org-name">Kabid Persandian & Keamanan Informasi</div>
-                            <div class="org-person">Arofa Abdilla Rahman, ST. MT.</div>
-                        </div>
-
-                        <!-- Kabid Aplikasi Informatika -->
-                        <div class="org-card" data-nama="Junenti Kolbert Nadeak, ST. ME"
-                            data-jabatan="Kabid Aplikasi Informatika" data-foto="{{ asset('organisasi/3.jpg') }}">
-                            <i class="fas fa-cogs"></i>
-                            <div class="org-name">Kabid Aplikasi Informatika</div>
-                            <div class="org-person">Junenti Kolbert Nadeak, ST. ME</div>
-                        </div>
-                    </div>
-
-                    <!-- Level 3 - Kasubag Umum & Kepegawaian -->
-                    <div class="org-level level-three">
-                        <div class="org-card" data-nama="Susilawaty Syariefah, S.Sos. MA"
-                            data-jabatan="Kasubag Umum dan Kepegawaian" data-foto="{{ asset('organisasi/7.jpg') }}">
-                            <i class="fas fa-users-cog"></i>
-                            <div class="org-name">Kasubag Umum dan Kepegawaian</div>
-                            <div class="org-person">Susilawaty Syariefah, S.Sos. MA.</div>
-                        </div>
-                    </div>
-
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Komunitas Belajar</h4>
+                    <p>Wadah interaktif untuk saling berbagi ilmu, ide, dan pengalaman antar pengguna di seluruh Indonesia.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2 class="section-title">
-                <i class="fas fa-map-marker-alt"></i>
-                Lokasi Kantor Dinas Komunikasi dan Informatika Kota Bogor
-            </h2>
-
-            <div id="map" style="height: 500px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            </div>
-        </section>
-
-
-        @if (Auth::check())
-            <!-- Saran -->
-            <section class="section suggestion-section">
-                <h2 class="section-title">
-                    <i class="fas fa-comment-dots"></i>
-                    Saran & Masukan
-                </h2>
-
-                <div class="suggestion-card" onclick="toggleForm()">
-                    <div class="suggestion-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="suggestion-title">Berikan Saran Anda</h3>
-                    <p class="suggestion-desc">
-                        Masukan Anda sangat berharga! Sampaikan saran, kritik, atau ide untuk membantu pengembangan MP-SPBE
-                        Kota Bogor agar semakin optimal dan bermanfaat bagi seluruh pengguna.
-                    </p>
-
-                    <button class="suggestion-btn">
-                        <i class="fas fa-pen"></i>
-                        Tulis Saran
-                    </button>
+    <!-- Kontak & Bantuan -->
+    <section class="section">
+        <h2 class="section-title">
+            <i class="fas fa-envelope-open-text"></i>
+            Kontak dan Bantuan
+        </h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h4><i class="fas fa-book-open"></i> Panduan Pengguna</h4>
+                <div class="contact-info">
+                    <i class="fas fa-question-circle"></i>
+                    <a href="{{ route('bantuan') }}">Pusat Bantuan</a>
                 </div>
+                <div class="contact-info">
+                    <i class="fas fa-file-alt"></i>
+                    <a href="{{ route('ketentuan') }}">Ketentuan Pengguna</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <a href="{{ route('privasi') }}">Kebijakan Privasi</a>
+                </div>
+            </div>
 
-                <form class="suggestion-form" id="suggestionForm" method="POST" action="{{ route('saran.store') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="nama">
-                            <i class="fas fa-user"></i>
-                            Nama
-                        </label>
-                        @auth
-                            <input type="text" id="nama" name="nama" value="{{ auth()->user()->nama }}"
-                                style="background-color: rgba(225, 225, 225, 0.314)" readonly>
-                        @else
-                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-                        @endauth
-                    </div>
+            <div class="contact-card">
+                <h4><i class="fas fa-life-ring"></i> Hubungi Kami</h4>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@tanyain.id">support@tanyain.id</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://tanyain.id" target="_blank">www.tanyain.id</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="form-group">
-                        <label for="pesan">
-                            <i class="fas fa-comment-alt"></i>
-                            Pesan
-                        </label>
-                        <textarea id="pesan" name="pesan" placeholder="Tulis saran, kritik, atau masukan Anda di sini..." required></textarea>
-                    </div>
+    @if (Auth::check())
+    <!-- Saran -->
+    <section class="section suggestion-section">
+        <h2 class="section-title">
+            <i class="fas fa-comment-dots"></i>
+            Saran & Masukan
+        </h2>
 
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Kirim Saran
-                        </button>
-                        <button type="button" class="cancel-btn" onclick="hideForm()">
-                            <i class="fas fa-times"></i>
-                            Batal
-                        </button>
-                    </div>
-                </form>
-            </section>
-        @endif
-    </div>
+        <div class="suggestion-card" onclick="toggleForm()">
+            <div class="suggestion-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="suggestion-title">Berikan Saran Anda</h3>
+            <p class="suggestion-desc">
+                Kami selalu terbuka untuk masukan, kritik, dan ide dari Anda. Sampaikan saran terbaik untuk membantu pengembangan platform ini agar semakin bermanfaat bagi semua pengguna.
+            </p>
+            <button class="suggestion-btn">
+                <i class="fas fa-pen"></i>
+                Tulis Saran
+            </button>
+        </div>
+
+        <form class="suggestion-form" id="suggestionForm" method="POST" action="{{ route('saran.store') }}">
+            @csrf
+            <div class="form-group">
+                <label for="nama"><i class="fas fa-user"></i> Nama</label>
+                @auth
+                    <input type="text" id="nama" name="nama" value="{{ auth()->user()->nama }}" style="background-color: rgba(225,225,225,0.314)" readonly>
+                @else
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                @endauth
+            </div>
+
+            <div class="form-group">
+                <label for="pesan"><i class="fas fa-comment-alt"></i> Pesan</label>
+                <textarea id="pesan" name="pesan" placeholder="Tulis saran, kritik, atau masukan Anda di sini..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Kirim Saran
+                </button>
+                <button type="button" class="cancel-btn" onclick="hideForm()">
+                    <i class="fas fa-times"></i>
+                    Batal
+                </button>
+            </div>
+        </form>
+    </section>
+    @endif
+</div>
 
 
     <!-- Modal Structure -->

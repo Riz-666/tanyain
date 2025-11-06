@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Profile ' . $user->nama . ' - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Profile ' . $user->nama . ' - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/profile/profile.css') }}">

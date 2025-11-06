@@ -20,7 +20,7 @@ class ArticleController extends Controller
         $sort = $request->input('sort', 'latest');
         $search = $request->input('search');
         $tag = $request->input('tag');
-
+ 
         $query = Artikel::with(['user', 'repositori', 'viewArtikel', 'tag']);
 
         if (! Auth::check()) {

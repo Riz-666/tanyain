@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Repositori - Open Data Diskominfo Kota Bogor')
+@section('title', 'Detail Repositori - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">

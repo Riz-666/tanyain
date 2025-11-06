@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Hasil Pencarian - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Hasil Pencarian - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/search.css') }}">

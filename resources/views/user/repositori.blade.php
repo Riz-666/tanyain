@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Repositori - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Repositori - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/repositori/repo.css') }}">
@@ -23,9 +23,10 @@
                             <i class="fas fa-folder-open me-3"></i>Repositori
                         </h1>
                         <p class="page-subtitle">
-                            Kumpulan repositori dan file yang dapat dimanfaatkan untuk mendukung penerapan Manajemen
-                            Perubahan SPBE Kota Bogor.
+                            Tempat terbaik untuk menyimpan dan berbagi file pengetahuan. Jelajahi repositori dan
+                            temukan inspirasi baru setiap hari.
                         </p>
+
                     </div>
                 </div>
                 <div class="col-lg-4">

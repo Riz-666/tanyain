@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Artikel - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Artikel - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/artikel/artikel.css') }}">

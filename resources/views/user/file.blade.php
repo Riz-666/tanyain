@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'File Repository - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'File Repository - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/file/file.css') }}">
@@ -23,9 +23,10 @@
                             <i class="fa-regular fa-file me-3"></i>File Repositori
                         </h1>
                         <p class="page-subtitle">
-                            Akses file dari repositori sebagai dukungan terhadap pengelolaan dan pelaksanaan MP-SPBE Kota
-                            Bogor.
+                            Kumpulan file dan dokumen yang dapat diakses untuk mendukung pembelajaran, riset, dan
+                            pengelolaan pengetahuan secara terbuka.
                         </p>
+
                     </div>
                 </div>
                 <div class="col-lg-4">

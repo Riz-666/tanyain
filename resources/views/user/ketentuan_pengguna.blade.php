@@ -1,75 +1,82 @@
 @extends('layouts.app')
-@section('title','Ketentuan Pengguna - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title','Ketentuan Pengguna - TanyaIn | Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/saran.css') }}">
 @endsection
 @section('content')
     <div class="container mt-6 body-saran" style="margin-top: 60px">
-        <!-- Tentang Website -->
+        <!-- Ketentuan Pengguna -->
         <section class="section">
             <h2 class="section-title">
                 <i class="fas fa-info-circle"></i>
-                Ketentuan Pengguna – MP-SPBE Kota Bogor
+                Ketentuan Pengguna – TanyaIn
             </h2>
             <div class="about-content">
-                <p><strong>MP-SPBE Kota Bogor</strong> Selamat datang di platform Manajemen Pengetahuan SPBE Kota Bogor,
-                    sebuah sistem berbasis web yang dikembangkan untuk mendukung implementasi Sistem Pemerintahan Berbasis Elektronik (SPBE).
-                    Platform ini memfasilitasi berbagi pengetahuan melalui artikel, dokumen, dan repositori digital.
-                    MP-SPBE Kota Bogor memungkinkan pengguna untuk mencari, membaca, dan berbagi informasi secara efisien.
-                    Ketentuan ini merupakan perjanjian yang wajib dibaca, dipahami, dan disetujui oleh pengunjung
-                    (selanjutnya disebut “Anda” atau “Pengguna”) sebelum mengakses dan/atau menggunakan MP-SPBE Kota Bogor.
-                    Dengan mengakses dan menggunakan layanan MP-SPBE Kota Bogor, Anda dianggap telah membaca, memahami, dan menyetujui seluruh isi ketentuan ini.
-                    Jika Anda tidak setuju dengan sebagian atau seluruh ketentuan ini, mohon untuk tidak menggunakan MP-SPBE Kota Bogor.
-                    Harap baca ketentuan ini dengan cermat, karena ketidakpatuhan dapat berakibat pada penangguhan akun, penghapusan konten,
-                    hingga tanggung jawab perdata maupun pidana sesuai hukum yang berlaku.</p>
+                <p><strong>TanyaIn</strong> adalah platform berbasis web yang dikembangkan untuk memfasilitasi berbagi
+                    pengetahuan, artikel, dan repositori ilmu antar pengguna di Indonesia. Melalui TanyaIn, pengguna dapat
+                    mencari, membaca, dan membagikan informasi secara efisien dan terstruktur untuk mendukung budaya transfer
+                    knowledge.</p>
+
+                <p>Ketentuan ini merupakan perjanjian antara Anda (“Pengguna”) dan pengelola TanyaIn yang berisi aturan dalam
+                    menggunakan seluruh layanan di dalam platform. Dengan mengakses atau menggunakan TanyaIn, Anda dianggap
+                    telah membaca, memahami, dan menyetujui seluruh ketentuan ini. Jika Anda tidak setuju, mohon untuk tidak
+                    melanjutkan penggunaan layanan TanyaIn.</p>
 
                 <h3><i class="fas fa-book"></i> Penggunaan Umum</h3>
-                <p>Kecuali diizinkan secara tertulis oleh pengelola MP-SPBE Kota Bogor, kami memberikan kepada Anda hak
-                    non-eksklusif, terbatas, dapat dibatalkan, tidak dapat dialihkan, dan tidak dapat disublisensikan untuk
-                    menggunakan MP-SPBE Kota Bogor hanya untuk tujuan internal, pembelajaran, dan non-komersial.</p>
+                <p>TanyaIn memberikan hak terbatas, non-eksklusif, tidak dapat dipindahtangankan, dan dapat dicabut kepada
+                    Pengguna untuk menggunakan platform ini hanya untuk tujuan pembelajaran, penelitian, dan berbagi
+                    pengetahuan secara non-komersial.</p>
 
                 <p>Anda setuju untuk tidak melakukan hal-hal berikut:</p>
                 <ol>
-                    <li>Menggunakan MP-SPBE Kota Bogor untuk tujuan komersial tanpa izin resmi.</li>
-                    <li>Menghapus, merusak, menonaktifkan, atau mengganggu fitur keamanan dalam platform MP-SPBE Kota Bogor.</li>
-                    <li>Mengunggah, mengakses, atau membagikan data yang bukan milik Anda atau tanpa izin sah dari pemiliknya.</li>
-                    <li>Membuat klaim palsu, menyesatkan, atau menggambarkan secara keliru konten maupun layanan MP-SPBE Kota Bogor.</li>
-                    <li>Menggunakan MP-SPBE Kota Bogor untuk tujuan ilegal, melanggar hukum, atau yang bertentangan dengan norma kesusilaan.</li>
-                    <li>Mengeksploitasi atau menyebarluaskan celah keamanan (vulnerability) tanpa pelaporan resmi.</li>
-                    <li>Menggunakan bot, crawler, atau perangkat otomatis lain untuk mengambil sebagian/seluruh data tanpa izin.</li>
-                    <li>Mengubah tampilan, antarmuka, atau mengalihkan tautan MP-SPBE Kota Bogor tanpa persetujuan resmi.</li>
-                    <li>Mengunggah konten yang melanggar hak cipta, mengandung SARA, pornografi, ujaran kebencian, atau merugikan pihak lain.</li>
+                    <li>Menggunakan TanyaIn untuk tujuan komersial tanpa izin resmi dari pengelola.</li>
+                    <li>Menghapus, menonaktifkan, atau mengganggu fitur keamanan dalam platform.</li>
+                    <li>Mengunggah konten yang bukan milik sendiri tanpa izin sah dari pemiliknya.</li>
+                    <li>Menyebarkan informasi yang menyesatkan, palsu, atau berpotensi merugikan pihak lain.</li>
+                    <li>Menggunakan TanyaIn untuk tujuan ilegal, spam, atau melanggar norma sosial.</li>
+                    <li>Mengeksploitasi celah keamanan tanpa pelaporan resmi.</li>
+                    <li>Menggunakan bot, crawler, atau alat otomatis untuk mengambil data tanpa izin.</li>
+                    <li>Mengubah tampilan, antarmuka, atau mengalihkan tautan platform tanpa izin tertulis.</li>
+                    <li>Mengunggah konten yang melanggar hak cipta, mengandung SARA, pornografi, atau ujaran kebencian.</li>
                 </ol>
 
                 <h3><i class="fas fa-balance-scale"></i> Pembatasan Tanggung Jawab dan Jaminan</h3>
-                <p>MP-SPBE Kota Bogor tidak bertanggung jawab atas kerugian langsung maupun tidak langsung, termasuk kehilangan data
-                    atau kerugian lainnya yang timbul dari:</p>
+                <p>Pengelola TanyaIn tidak bertanggung jawab atas kerugian langsung maupun tidak langsung, termasuk kehilangan data,
+                    akibat dari:</p>
                 <ul>
                     <li>Akses tidak sah, peretasan, atau pelanggaran keamanan.</li>
-                    <li>Penggunaan informasi yang diperoleh dari pihak ketiga yang terhubung dengan MP-SPBE Kota Bogor.</li>
-                    <li>Gangguan teknis, keterlambatan, atau kesalahan layanan yang berada di luar kendali kami.</li>
+                    <li>Penggunaan konten yang bersumber dari pihak ketiga.</li>
+                    <li>Gangguan teknis, keterlambatan, atau kegagalan sistem di luar kendali pengelola.</li>
                 </ul>
-                <p>Kami tidak menjamin bahwa MP-SPBE Kota Bogor akan selalu tersedia, bebas dari gangguan, atau sepenuhnya aman dari ancaman digital.</p>
+                <p>Kami tidak menjamin TanyaIn akan selalu tersedia tanpa gangguan atau sepenuhnya bebas dari ancaman digital,
+                    namun kami berkomitmen untuk terus meningkatkan keamanan dan performanya.</p>
 
                 <h3><i class="fas fa-copyright"></i> Hak Kekayaan Intelektual</h3>
-                <p>Seluruh perangkat lunak, desain, logo, dan elemen dalam MP-SPBE Kota Bogor merupakan milik tim pengelola
-                    dan dilindungi oleh hukum. Hak cipta artikel, repositori, atau file yang diunggah tetap menjadi milik penulis/pengunggah.
-                    Namun, dengan mengunggah konten ke MP-SPBE Kota Bogor, Anda memberikan izin non-eksklusif
-                    kepada pengelola untuk menampilkan, mendistribusikan, dan menyimpan konten tersebut dalam platform.</p>
-                <p>Pengguna tidak diperbolehkan menyalin, mereproduksi, atau menggunakan elemen kekayaan intelektual MP-SPBE Kota Bogor
-                   tanpa izin tertulis dari kami.</p>
+                <p>Seluruh logo, desain, tampilan, dan elemen sistem dalam TanyaIn adalah milik pengembang dan dilindungi oleh
+                    hukum hak cipta. Hak cipta artikel atau file yang diunggah tetap menjadi milik penulis atau pengunggah.
+                    Dengan mengunggah konten ke TanyaIn, Anda memberikan izin non-eksklusif kepada pengelola untuk menampilkan,
+                    menyimpan, dan mendistribusikan konten tersebut di dalam platform.</p>
+                <p>Dilarang menyalin, memodifikasi, atau menggunakan elemen TanyaIn untuk kepentingan lain tanpa izin tertulis
+                    dari pengelola.</p>
 
                 <h3><i class="fas fa-cogs"></i> Perubahan Layanan</h3>
-                <p>Kami berhak mengubah, menambahkan, atau menghentikan sebagian maupun seluruh layanan MP-SPBE Kota Bogor sewaktu-waktu dengan atau tanpa pemberitahuan terlebih dahulu.</p>
+                <p>Pengelola TanyaIn berhak melakukan perubahan, pembaruan, atau penghentian sebagian maupun seluruh fitur
+                    layanan kapan pun dengan atau tanpa pemberitahuan terlebih dahulu.</p>
 
                 <h3><i class="fas fa-gavel"></i> Hukum yang Berlaku & Penyelesaian Sengketa</h3>
                 <p>Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum Republik Indonesia.</p>
                 <ul>
-                    <li>Segala sengketa atau perselisihan akan diselesaikan terlebih dahulu melalui musyawarah dan mufakat.</li>
-                    <li>Jika dalam 30 (tiga puluh) hari sengketa tidak terselesaikan, maka penyelesaian akan dilakukan melalui Pengadilan Negeri di wilayah hukum tempat pengelola MP-SPBE Kota Bogor berada.</li>
+                    <li>Setiap sengketa atau perselisihan akan diselesaikan terlebih dahulu secara musyawarah.</li>
+                    <li>Apabila dalam 30 (tiga puluh) hari tidak tercapai kesepakatan, penyelesaian dilakukan melalui
+                        Pengadilan Negeri di wilayah domisili pengelola TanyaIn.</li>
                 </ul>
+
+                <h3><i class="fas fa-thumbs-up"></i> Persetujuan</h3>
+                <p>Dengan menggunakan platform TanyaIn, Anda dianggap telah membaca, memahami, dan menyetujui seluruh isi
+                    ketentuan ini serta bersedia mematuhi segala peraturan yang berlaku di dalamnya.</p>
             </div>
         </section>
+
         <script>
             function toggleForm() {
                 const form = document.getElementById('suggestionForm');

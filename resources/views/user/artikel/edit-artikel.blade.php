@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Artikel - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Edit Artikel - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/artikel/create.css') }}">
@@ -15,7 +15,7 @@
             <div class="alert alert-danger">
                 <ul class="mb-0">
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <li>{{ $error }}</li> 
                     @endforeach
                 </ul>
             </div>

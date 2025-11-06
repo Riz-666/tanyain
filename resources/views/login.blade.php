@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Login - Open Data Diskominfo Kota Bogor')
+@section('title', 'Login - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/login.css') }}">
 @endsection
