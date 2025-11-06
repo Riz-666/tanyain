@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Repositori - Open Data Diskominfo Kota Bogor')
+@section('title', 'Edit Repositori - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/repositori/edit.css') }}">
@@ -17,7 +17,7 @@
                 </ul>
             </div>
         @endif
-        <div class="form-card">
+        <div class="form-card"> 
             <h1 class="form-title">
                 <i class="fa fa-folder-open text-primary me-2"></i>
                 Edit Repository

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Sampah - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Sampah - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/trash.css') }}">

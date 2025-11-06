@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Notifikasi - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Notifikasi - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/notif.css') }}">

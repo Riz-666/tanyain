@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Manajemen Pengetahuan SPBE Kota Bogor')</title>
+    <title>@yield('title', 'Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-bogor.png') }}">
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo-bogor.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo-bogor.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">

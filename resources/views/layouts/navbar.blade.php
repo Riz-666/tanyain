@@ -3,8 +3,8 @@
     <div class="container">
         <div class="nav-brand">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/logo-bogor.png') }}" width="60px">
-                <span class="logo-text">MP - SPBE Kota Bogor</span>
+                <img src="{{ asset('images/logo.png') }}" width="55px">
+                <span class="logo-text">TanyaIn</span>
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

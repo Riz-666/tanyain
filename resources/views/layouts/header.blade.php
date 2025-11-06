@@ -4,10 +4,12 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="hero-content">
-                    <h1 class="hero-title">Manajemen Pengetahuan SPBE  Kota Bogor</h1>
+                    <h1 class="hero-title">TanyaIn</h1>
                     <p class="hero-subtitle">
-                        Layanan data terbuka berbasis elektronik memberikan layanan data Pemerintah Daerah tanpa biaya, mudah, cepat, tepat dan akurat
+                        Platform berbagi pengetahuan dan repositori file berbasis pencarian. Temukan, pelajari, dan
+                        bagikan wawasanmu dengan mudah dan cepat.
                     </p>
+
                     <form action="{{ route('search.all') }}" method="GET" role="search">
                         <div class="search-box">
                             <div class="input-group">
@@ -64,8 +66,8 @@
                             <div class="hero-icon-main">
                                 <i class="fas fa-layer-group"></i>
                             </div>
-                            <h3>Manajemen Pengetahuan SPBE Kota Bogor</h3>
-
+                            <h3>TanyaIn</h3>
+                            <p>Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia</p>
                             <!-- Floating Stats -->
                             <div class="hero-stat-1">
                                 <i class="fas fa-brain"></i>

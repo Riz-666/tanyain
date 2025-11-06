@@ -5,10 +5,10 @@
 
         <a href="#" class="logo">
             <div class="logo-icon">
-                <img src="{{ asset('images/logo-bogor.png') }}" alt="" width="90px">
+                <img src="{{ asset('images/logo.png') }}" alt="" width="30px">
             </div>
             <div>
-                <h5 class="logo-text">MP - SPBE</h5>
+                <h5 class="logo-text">TanyaIn</h5>
                 <div class="logo-subtitle">Admin Panel</div>
                 <button class="header-btn d-lg-none" @click="sidebarOpen = !sidebarOpen">
                     <i class="fas fa-bars"></i>

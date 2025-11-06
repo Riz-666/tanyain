@@ -130,7 +130,7 @@ class RepositoryController extends Controller
             'file_tambahan.required' => 'Minimal harus ada 1 file yang diupload.',
         ]);
 
-        $allowedExt = ['pdf','jpg', 'jpeg', 'png', 'mp4', 'pptx'];
+        $allowedExt = ['pdf','jpg', 'jpeg', 'png', 'mp4', 'pptx', 'zip', 'rar'];
 
         $maxSizes = [
             'pdf' => 20 * 1024 * 1024,
@@ -139,6 +139,8 @@ class RepositoryController extends Controller
             'png' => 5 * 1024 * 1024,
             'mp4' => 50 * 1024 * 1024,
             'pptx' => 20 * 1024 * 1024,
+            'zip' => 150 * 1024 * 1024,
+            'rar' => 150 * 1024 * 1024,
         ];
 
         // Validasi ekstensi
@@ -300,9 +302,8 @@ class RepositoryController extends Controller
         ]);
 
         // Daftar ekstensi yang diizinkan
-        $allowedExt = ['pdf', 'jpg', 'jpeg', 'png', 'mp4'];
+        $allowedExt = ['pdf','jpg', 'jpeg', 'png', 'mp4', 'pptx', 'zip', 'rar'];
 
-        // Ukuran maksimal per ekstensi
         $maxSizes = [
             'pdf' => 20 * 1024 * 1024,
             'jpg' => 5 * 1024 * 1024,
@@ -310,6 +311,8 @@ class RepositoryController extends Controller
             'png' => 5 * 1024 * 1024,
             'mp4' => 50 * 1024 * 1024,
             'pptx' => 20 * 1024 * 1024,
+            'zip' => 150 * 1024 * 1024,
+            'rar' => 150 * 1024 * 1024,
         ];
 
         // Ambil repositori yang akan di-edit

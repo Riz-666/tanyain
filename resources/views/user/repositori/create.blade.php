@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Buat Repositori - Manajemen Pengetahuan SPBE Kota Bogor')
+@section('title', 'Buat Repositori - Platform Berbagi Pengetahuan & Repositori Ilmu Indonesia')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css-new/repositori/create.css') }}">
@@ -99,10 +99,12 @@
                                 <span class="format-badge">POWER POINT (20MB)</span>
                                 <span class="format-badge">video (50MB)</span>
                                 <span class="format-badge">Foto (5MB)</span>
+                                <span class="format-badge">ZIP (150MB)</span>
+                                <span class="format-badge">RAR (150MB)</span>
                             </div>
                         </div>
                         <input type="file" id="projectFiles" name="file_tambahan[]" multiple
-                            accept=".pdf, .jpg, .jpeg, .png, .mp4, .pptx"
+                            accept=".pdf, .jpg, .jpeg, .png, .mp4, .pptx, .zip, .rar"
                             style="display: none;">
                     </div>
 
@@ -315,6 +317,8 @@
                 'mp4': 'fa-file-video',
                 'pptx': 'fa-file-powerpoint',
                 'pdf': 'fa-file-pdf',
+                'zip': 'fa-zipper',
+                'rar': 'fa-zipper',
             };
 
             return iconMap[ext] || 'fa-file';
