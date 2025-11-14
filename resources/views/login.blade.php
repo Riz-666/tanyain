@@ -63,6 +63,11 @@
                     <span class="button-text">Sign In</span>
                     <div class="loading"></div>
                 </button>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <span style="color: var(--text-light); font-size: 14px;">Tidak punya akun? </span>
+                    <a href="{{ route('register') }}" style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">Daftar sekarang</a>
+                </div>
             </form>
         </div>
     </center>

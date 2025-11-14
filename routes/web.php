@@ -22,12 +22,14 @@ use App\Http\Controllers\KomentarVoteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RepositoryController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TrashController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -48,6 +50,10 @@ use Illuminate\Support\Facades\Route;
     Route::post('/administrator/auth', [LoginController::class, 'authAdmin'])->middleware('guest.admin')->name('admin.auth');
     Route::get('/login', [LoginController::class, 'login'])->middleware('guest.admin')->name('login');
     Route::post('/login/auth', [LoginController::class, 'auth'])->name('auth');
+
+    // Register routes
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 
     //dashboard
