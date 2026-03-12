@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <input type="file" id="projectFiles" name="file_tambahan[]" multiple
-                            accept=".pdf, .jpg, .jpeg, .png, .mp4, .pptx, .zip, .rar"
+                            accept=".pdf, .jpg, .jpeg, .png, .mp4, .pptx, .zip, .rar, .csv"
                             style="display: none;">
                     </div>
 
